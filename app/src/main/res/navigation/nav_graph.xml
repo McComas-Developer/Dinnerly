@@ -12,11 +12,48 @@
         tools:layout="@layout/fragment_start" >
         <action
             android:id="@+id/action_startFragment_to_chooseCategories"
-            app:destination="@id/chooseCategories" />
+            app:destination="@id/chooseCategories"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_startFragment_to_settings"
+            app:destination="@id/settings"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/chooseCategories"
         android:name="com.example.dinnerdecider.ChooseCategories"
         android:label="fragment_choose_categories"
-        tools:layout="@layout/fragment_choose_categories" />
+        tools:layout="@layout/fragment_choose_categories" >
+        <action
+            android:id="@+id/action_chooseCategories_to_showDecision"
+            app:destination="@id/showDecision"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/showDecision"
+        android:name="com.example.dinnerdecider.ShowDecision"
+        android:label="fragment_show_decision"
+        tools:layout="@layout/fragment_show_decision">
+        <action
+            android:id="@+id/action_showDecision_to_startFragment"
+            app:destination="@id/startFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.dinnerdecider.Settings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

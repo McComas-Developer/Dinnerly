@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@android:color/holo_blue_light">
+    android:background="@color/secondary">
 
     <TextView
         android:id="@+id/btn_category"
@@ -11,11 +11,9 @@
         android:background="@drawable/txtbx_outline"
         android:text="@string/test_category"
         android:textAllCaps="false"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:paddingTop="20dp"
@@ -28,12 +26,11 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/ani_check"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:layout_marginRight="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
         app:lottie_fileName="checkmark2.json"
         app:lottie_loop="false"
-        android:elevation="15dp"
         android:visibility="visible"
         app:layout_constraintTop_toTopOf="@+id/btn_category"
         app:layout_constraintRight_toRightOf="@+id/btn_category"/>

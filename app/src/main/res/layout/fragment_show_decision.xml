@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@android:color/holo_blue_light"
+    android:background="@color/secondary"
     tools:context=".ShowDecision">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,12 +15,50 @@
             android:id="@+id/txt_decision"
             android:textSize="40sp"
             android:textStyle="bold"
-            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/title_decided"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/txt_places"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="@string/hello_blank_fragment"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="30dp"
+            android:text="@string/title_places"
+            app:layout_constraintTop_toBottomOf="@+id/txt_decision"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <WebView
+            android:id="@+id/web_search"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/txtbx_outline"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_places"/>
+        <Button
+            android:id="@+id/btn_again"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/btn_again"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:background="@drawable/button_state"
+            app:layout_constraintTop_toBottomOf="@+id/web_search"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

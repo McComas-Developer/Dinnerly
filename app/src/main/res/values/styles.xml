@@ -4,7 +4,6 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/statusBar</item>
-        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
 </resources>

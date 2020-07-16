@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/primary"
+    tools:context=".ui.ChooseType">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/txt_title"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_type"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:id="@+id/txt_desc"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:background="@drawable/txtbx_outline"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_type"
+            android:layout_marginTop="100dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_categories"
+            android:text="@string/btn_custom"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:background="@drawable/button_state"
+            android:layout_width="250dp"
+            android:layout_marginTop="70dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/txt_desc"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_custom"
+            android:text="@string/title_categories"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:background="@drawable/button_state"
+            android:layout_width="250dp"
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/btn_categories"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

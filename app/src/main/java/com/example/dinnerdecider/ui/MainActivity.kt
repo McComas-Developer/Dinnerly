@@ -15,14 +15,8 @@ class MainActivity : AppCompatActivity(){
         val sharedPreferences = this.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
         val isDarkModeOn = sharedPreferences.getBoolean("isDarkModeOn", false)
 
-        // When user reopens the app
-        // after applying dark/light mode
-        if (isDarkModeOn) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        }
-
-
+        // When user reopens the app, apply dark/light mode
+        if (isDarkModeOn) { AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) }
+        else { AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO) }
     }
 }

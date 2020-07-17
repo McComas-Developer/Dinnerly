@@ -10,15 +10,12 @@ import android.widget.ImageButton
 import androidx.navigation.fragment.NavHostFragment
 import com.example.dinnerdecider.R
 
-class StartFragment : Fragment() {
-    private var btnStart: Button? = null
-    private var btnSettings: ImageButton? = null
+class StartFragment : Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
         val v :View = inflater.inflate(R.layout.fragment_start, container, false)
-        btnStart = v.findViewById(R.id.btn_start)
-        btnSettings = v.findViewById(R.id.btn_settings)
+        val btnStart: Button? = v.findViewById(R.id.btn_start)
+        val btnSettings: ImageButton? = v.findViewById(R.id.btn_settings)
         btnStart!!.setOnClickListener{
             NavHostFragment.findNavController(this).navigate(R.id.action_startFragment_to_chooseType)
         }
@@ -27,5 +24,4 @@ class StartFragment : Fragment() {
         }
         return v
     }
-
 }

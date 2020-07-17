@@ -14,7 +14,9 @@
     <string name="lng_english">English</string>
     <string name="lng_spanish">Espanol</string>
     <string name="detail_language">Please select the language you wish this app to encase</string>
-    <string name="detail_info">This app was created by Michael McComas [insert more]</string>
+    <string name="detail_info">Creator: Michael McComas. \n\n Dinner Decider is the app to solve all your
+        "Where should we eat?" needs! You can select options to choose between in our category list
+        and this app will decide which place to go and display places that fit near you. </string>
     <string name="detail_feedback">If you have any questions or concerns please contact us at
         fakeEmail@fake.com</string>
     <string name="detail_categories">Here is a summary explanation of what are the categories</string>

@@ -11,7 +11,7 @@ import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
-import com.example.dinnerdecider.DialogBox
+import com.example.dinnerdecider.util.DialogBox
 import com.example.dinnerdecider.R
 
 

@@ -10,47 +10,40 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import com.example.dinnerdecider.R
+import com.example.dinnerdecider.util.DialogBox
 import java.util.*
 
-
 class ShowDecision : Fragment() {
-    private var chosen: TextView? = null
     private var searchKey: String? = null
-    private var webSearch: WebView? = null
     private var list = arrayListOf<String>()
-    private var btnAgain: Button? = null
-    private val GOOGLE_SERACH_URL = "https://www.google.com/search?q="
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
+        // Get variables for items in View
         val v: View = inflater.inflate(R.layout.fragment_show_decision, container, false)
-        btnAgain = v.findViewById(R.id.btn_again)
-        webSearch = v.findViewById(R.id.web_search)
+        val btnAgain: Button? = v.findViewById(R.id.btn_again)
+        val chosen: TextView? = v.findViewById(R.id.txt_decision)
+        val webSearch: WebView? = v.findViewById(R.id.web_search)
+        // Randomly select a value from argument list
         list = arguments?.getStringArrayList("Michael is better than Eli") as ArrayList<String>
-
         val rand = Random()
         searchKey = list[rand.nextInt(list.size)]
-
-        chosen = v.findViewById(R.id.txt_decision)
         chosen?.text = "$searchKey it is"
-
+        // Navigate back to Main Screen
         btnAgain!!.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(R.id.action_showDecision_to_startFragment)
         }
         onSearchClick(webSearch)
         return v
     }
-
-    private fun onSearchClick(v: View?) {
+    // Search google with selected category
+    private fun onSearchClick(v: WebView?) {
         try {
-            webSearch?.getSettings()?.setJavaScriptEnabled(true);
-            webSearch?.loadUrl(GOOGLE_SERACH_URL + "$searchKey near me");
-            /*val intent = Intent(Intent.ACTION_WEB_SEARCH)
-            //val term: String = chosen?.text.toString()
-            //intent.putExtra(SearchManager.QUERY, term)
-            startActivity(intent)*/
+            v?.settings?.javaScriptEnabled = true;
+            v?.loadUrl("https://www.google.com/search?q=$searchKey restaurants near me");
         } catch (e: Exception) {
-            // TODO: handle exception
+            val dialog = DialogBox()
+            dialog.showDialogBox(resources.getString(R.string.title_internet),
+                resources.getString(R.string.detail_internet), context)
         }
     }
 }

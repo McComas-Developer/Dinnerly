@@ -42,7 +42,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btn_categories"
+            android:id="@+id/btn_custom"
             android:text="@string/btn_custom"
             android:textAllCaps="false"
             android:textSize="20sp"
@@ -55,7 +55,7 @@
             app:layout_constraintRight_toRightOf="parent"/>
 
         <Button
-            android:id="@+id/btn_custom"
+            android:id="@+id/btn_categories"
             android:text="@string/title_categories"
             android:textAllCaps="false"
             android:textSize="20sp"
@@ -63,7 +63,7 @@
             android:layout_width="250dp"
             android:layout_marginTop="50dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/btn_categories"
+            app:layout_constraintTop_toBottomOf="@+id/btn_custom"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

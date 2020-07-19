@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/secondary"
-    tools:context=".ui.ChooseCategories">
+    android:background="@color/copy"
+    tools:context=".ui.CustomCategories">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,31 +13,43 @@
 
         <TextView
             android:id="@+id/txt_title"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:text="@string/title_categories"
+            android:textSize="30sp"
             android:textColor="@android:color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
+            android:text="@string/title_custom"
+            android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginLeft="20dp" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_categories"
-            android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:layout_marginTop="50dp"
+        <TextView
+            android:id="@+id/txt_enter"
+            android:textSize="20sp"
+            android:text="@string/detail_custom"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:paddingBottom="20dp"
-            android:scaleType="fitXY"
-            android:adjustViewBounds="true"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_title"
-            android:layout_marginLeft="10dp" />
-
+            android:layout_marginLeft="20dp" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtxt_number"
+            android:layout_width="50dp"
+            android:inputType="number"
+            android:textColor="@android:color/white"
+            android:maxLength="1"
+            android:gravity="center"
+            android:background="@drawable/txtbx_outline"
+            android:layout_height="50dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintLeft_toRightOf="@+id/txt_enter"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title" />
         <Button
             android:id="@+id/btn_random"
             android:textAllCaps="false"
@@ -51,18 +63,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/img_info"
-            android:src="@drawable/ic_info"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_custom"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
             android:layout_marginTop="30dp"
-            android:layout_marginEnd="20dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="20dp" />
-
+            app:layout_constraintTop_toBottomOf="@+id/txt_enter"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

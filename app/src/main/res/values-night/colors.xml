@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="statusBar">#000000</color>
+    <color name="ripple_color">#cccccc</color>
+    <color name="btn_color">#323232</color>
+    <color name="btn_txt_color">#FFFFFF</color>
     <color name="secondary">#212121</color>
+    <color name="copy">#212121</color>
     <color name="primary">#5a5a5a</color>
     <color name="colorPrimary">#212121</color>
 </resources>

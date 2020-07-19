@@ -19,6 +19,9 @@ class ChooseType : Fragment(){
         val btnCustom: Button? = v.findViewById(R.id.btn_custom)
         val btnCategory: Button? = v.findViewById(R.id.btn_categories)
 
+        btnCustom!!.setOnClickListener {
+            NavHostFragment.findNavController(this).navigate(R.id.action_chooseType_to_customCategories)
+        }
         btnCategory!!.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(R.id.action_chooseType_to_chooseCategories)
         }

@@ -1,4 +1,4 @@
-package com.example.dinnerdecider
+package com.example.dinnerdecider.model
 
 import android.content.Context
 import android.util.Log
@@ -8,19 +8,20 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
+import com.example.dinnerdecider.R
 import kotlinx.android.synthetic.main.view_categories.view.*
 
-class CategoryViewAdapter(private val list: List<CategoryModel>, private val context: Context) :
-    RecyclerView.Adapter<CategoryViewAdapter.CategoryViewHolder>() {
+class CustomViewAdapter(private val list: List<CategoryModel>, private val context: Context) :
+    RecyclerView.Adapter<CustomViewAdapter.CategoryViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewAdapter.CategoryViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val inflater = LayoutInflater.from(context)
         Log.d("Michael", "Create View Holder")
         return CategoryViewHolder(
             inflater.inflate(R.layout.view_categories, parent, false)
         )
     }
-    override fun onBindViewHolder(holder: CategoryViewAdapter.CategoryViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         Log.d("Michael", "Bind View Holder")
         val categories: String = list[position].title
         val model = list[position]

@@ -33,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
+            android:textColor="@android:color/white"
             android:layout_marginStart="20dp"
             android:paddingBottom="10dp"
             android:text="Hello there! I am a test expansion"

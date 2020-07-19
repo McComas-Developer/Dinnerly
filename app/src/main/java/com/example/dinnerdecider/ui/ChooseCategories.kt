@@ -13,11 +13,10 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
-import com.example.dinnerdecider.CategoryModel
-import com.example.dinnerdecider.CategoryViewAdapter
-import com.example.dinnerdecider.CategoryViewModel
+import com.example.dinnerdecider.model.CategoryModel
+import com.example.dinnerdecider.model.CategoryViewAdapter
+import com.example.dinnerdecider.model.CategoryViewModel
 import com.example.dinnerdecider.R
-import com.example.dinnerdecider.util.Connectivity
 import com.example.dinnerdecider.util.DialogBox
 import java.util.ArrayList
 
@@ -33,12 +32,14 @@ class ChooseCategories : Fragment() {
         val categoryView: RecyclerView? = v.findViewById(R.id.recycler_categories)
         val randomize: Button? = v.findViewById(R.id.btn_random)
         val btnInfo: ImageButton? = v.findViewById(R.id.img_info)
-        categoryList = ViewModelProvider(this).get(CategoryViewModel::class.java).getCategories()
+        val model: CategoryViewModel = ViewModelProvider(this)
+            .get(CategoryViewModel::class.java)
+        categoryList = model.getCategories()
 
         // Animate expansion of RecyclerView
         (categoryView!!.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
         // Set recyclerview layout and adapter
-        categoryView?.apply {
+        categoryView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = CategoryViewAdapter(categoryList, context)
         }
@@ -46,9 +47,9 @@ class ChooseCategories : Fragment() {
         btnInfo!!.setOnClickListener { dialog.showDialogBox(resources.getString(R.string.title_categories),
         resources.getString(R.string.detail_categories), context) }
 
-        // Find selected categories and start next fragment
+        // If connected to internet, find selected categories and start next fragment
         randomize!!.setOnClickListener {
-            if (Connectivity.isOnline){
+            if (model.isConnected()){
                 val result = findSelected().map{ it.title }.takeIf { it.size >= 2 }
                 if (result != null){
                     val bundle = Bundle()

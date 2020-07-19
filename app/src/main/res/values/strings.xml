@@ -3,6 +3,8 @@
     <string name="btn_begin">Start</string>
     <string name="title_categories">Categories</string>
     <string name="title_type">Type</string>
+    <string name="title_custom">Custom</string>
+    <string name="detail_custom">Enter number of categories:</string>
     <string name="test_category">Empty Category!</string>
     <string name="btn_random">Randomize</string>
     <string name="btn_custom">Custom</string>
@@ -17,7 +19,7 @@
     <string name="detail_info">Creator: Michael McComas. \n\n Dinner Decider is the app to solve all your
         "Where should we eat?" needs! You can select options to choose between in our category list
         and this app will decide which place to go and display places that fit near you. </string>
-    <string name="detail_feedback">If you have any questions or concerns please contact us at
+    <string name="detail_feedback">If you have any questions or concerns please contact us at: \n\n
         fakeEmail@fake.com</string>
     <string name="detail_categories">Here is a summary explanation of what are the categories</string>
     <!-- Decision Fragment Strings -->
@@ -33,4 +35,5 @@
     <string name="AppVersion">App Version: 1.0.0</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_choice">Enter a choice</string>
 </resources>

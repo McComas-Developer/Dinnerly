@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary"
+        android:background="@color/copy"
         android:orientation="vertical">
         <TextView
             android:id="@+id/txt_dialog_title"
@@ -33,7 +33,7 @@
             android:gravity="center_horizontal" />
         <Button
             android:id="@+id/btn_ok"
-            android:layout_width="200dp"
+            android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:textSize="20sp"
@@ -42,6 +42,6 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/button_state"
             android:text="@string/okay"
-            android:textColor="#000" />
+            android:textColor="@color/btn_txt_color" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

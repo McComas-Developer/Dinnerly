@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/primary"
+    android:background="@color/copy"
     android:layout_height="match_parent"
     tools:context=".ui.Settings">
 
@@ -38,7 +38,7 @@
             app:layout_constraintRight_toRightOf="parent"/>
         <Button
             android:id="@+id/btn_dark"
-            android:background="@null"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:text="@string/title_dark"
             android:textSize="20sp"
             android:textAllCaps="false"
@@ -54,7 +54,7 @@
             app:layout_constraintTop_toBottomOf="@id/txt_settings"/>
         <Button
             android:id="@+id/btn_language"
-            android:background="@null"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:text="@string/title_language"
             android:textSize="20sp"
             android:textAllCaps="false"
@@ -70,7 +70,7 @@
             app:layout_constraintTop_toBottomOf="@+id/btn_dark"/>
         <Button
             android:id="@+id/btn_info"
-            android:background="@null"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:text="@string/title_info"
             android:textSize="20sp"
             android:textAllCaps="false"
@@ -86,7 +86,7 @@
             app:layout_constraintTop_toBottomOf="@+id/btn_language"/>
         <Button
             android:id="@+id/btn_feedback"
-            android:background="@null"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:text="@string/title_feedback"
             android:textSize="20sp"
             android:textAllCaps="false"

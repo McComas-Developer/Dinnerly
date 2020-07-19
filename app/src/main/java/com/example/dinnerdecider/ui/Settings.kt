@@ -63,6 +63,7 @@ class Settings : Fragment() {
                 Toast.makeText(context, "Dark Mode Off", Toast.LENGTH_SHORT).show()
             }
         }
+        btnDark!!.setOnClickListener { swDark!!.callOnClick() }
         return v
     }
 }

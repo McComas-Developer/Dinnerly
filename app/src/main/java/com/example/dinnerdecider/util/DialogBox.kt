@@ -16,11 +16,11 @@ class DialogBox {
         // Set Up Dialog box
         val build = AlertDialog.Builder(mFrom)
         val inflater = LayoutInflater.from(mFrom)
-        val dialV: View = inflater.inflate(R.layout.view_dialog, null)
-        build.setView(dialV)
-        val close = dialV.findViewById<Button>(R.id.btn_ok)
-        val title = dialV.findViewById<TextView>(R.id.txt_dialog_title)
-        val msg = dialV.findViewById<TextView>(R.id.txt_dialog)
+        val v: View = inflater.inflate(R.layout.view_dialog, null)
+        build.setView(v)
+        val close = v.findViewById<Button>(R.id.btn_ok)
+        val title = v.findViewById<TextView>(R.id.txt_dialog_title)
+        val msg = v.findViewById<TextView>(R.id.txt_dialog)
         title.text = mTitle
         msg.text = mMsg
         val box: AlertDialog = build.create()
@@ -32,11 +32,12 @@ class DialogBox {
         // Set Up Dialog box
         val build = AlertDialog.Builder(mFrom)
         val inflater = LayoutInflater.from(mFrom)
-        val dialV: View = inflater.inflate(R.layout.view_dialog_language, null)
-        build.setView(dialV)
-        val close = dialV.findViewById<Button>(R.id.btn_ok)
-        val title = dialV.findViewById<TextView>(R.id.txt_dialog_title)
-        val msg = dialV.findViewById<TextView>(R.id.txt_dialog)
+        val v: View = inflater.inflate(R.layout.view_dialog_language, null)
+        build.setView(v)
+        val close = v.findViewById<Button>(R.id.btn_cancel)
+        val update = v.findViewById<Button>(R.id.btn_update)
+        val title = v.findViewById<TextView>(R.id.txt_dialog_title)
+        val msg = v.findViewById<TextView>(R.id.txt_dialog)
         title.text = mTitle
         msg.text = mMsg
         val box: AlertDialog = build.create()

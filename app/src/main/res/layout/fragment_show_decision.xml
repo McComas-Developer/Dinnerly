@@ -13,7 +13,7 @@
 
         <TextView
             android:id="@+id/txt_decision"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:gravity="center"
             android:textColor="@android:color/white"
@@ -27,7 +27,7 @@
 
         <TextView
             android:id="@+id/txt_places"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:layout_width="wrap_content"
@@ -38,28 +38,41 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
 
-        <WebView
-            android:id="@+id/web_search"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/web_background"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="420dp"
+            android:paddingBottom="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/txtbx_outline"
             android:layout_marginTop="10dp"
+            android:background="@drawable/webview_round"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_places"/>
+            app:layout_constraintTop_toBottomOf="@+id/txt_places">
+            <WebView
+                android:id="@+id/web_search"
+                android:layout_width="match_parent"
+                android:layout_height="420dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <Button
             android:id="@+id/btn_again"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/btn_again"
-            android:textSize="20sp"
+            android:translationZ="5dp"
+            android:textSize="18sp"
             android:textAllCaps="false"
             android:textColor="@color/btn_txt_color"
-            android:background="@drawable/button_state"
-            app:layout_constraintTop_toBottomOf="@+id/web_search"
+            android:background="@drawable/btn_state"
+            app:layout_constraintTop_toBottomOf="@+id/web_background"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

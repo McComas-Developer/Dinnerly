@@ -11,58 +11,26 @@ import com.airbnb.lottie.LottieAnimationView
 import com.example.dinnerdecider.R
 import kotlinx.android.synthetic.main.view_categories.view.*
 
-class CustomViewAdapter(private val list: List<CategoryModel>, private val context: Context) :
-    RecyclerView.Adapter<CustomViewAdapter.CategoryViewHolder>() {
+class CustomViewAdapter(private val list: List<CustomModel>, private val context: Context?) :
+    RecyclerView.Adapter<CustomViewAdapter.CustomViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val inflater = LayoutInflater.from(context)
         Log.d("Michael", "Create View Holder")
-        return CategoryViewHolder(
-            inflater.inflate(R.layout.view_categories, parent, false)
+        return CustomViewHolder(
+            inflater.inflate(R.layout.view_custom, parent, false)
         )
     }
-    override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         Log.d("Michael", "Bind View Holder")
         val categories: String = list[position].title
-        val model = list[position]
         holder.bind(categories)
-
-        holder.itemView.ani_arrow.setOnClickListener {
-            val expanded: Boolean = model.isExpanded
-            model.isExpanded = !expanded
-            holder.itemView.ani_arrow.playAnimation()
-            notifyItemChanged(position)
-        }
     }
     override fun getItemCount(): Int = list.size
 
-    inner class CategoryViewHolder (mView: View) : RecyclerView.ViewHolder(mView) {
+    inner class CustomViewHolder (mView: View) : RecyclerView.ViewHolder(mView) {
         private var mCategory: TextView? = null
-        private var txtDesc: TextView? = null
-        init{
-            mCategory = mView.findViewById(R.id.btn_category)
-            val mCheck: LottieAnimationView? = mView.findViewById(R.id.ani_check)
-            txtDesc = mView.findViewById(R.id.txt_desc)
-            mView.setOnClickListener {
-                val model = list[adapterPosition]
-                if(model.isClicked){
-                    mCheck!!.progress = 0f
-                    mCheck.pauseAnimation()
-                    model.isClicked = false
-                    Log.d("Michael","Un-clicked")
-                }
-                else{
-                    mCheck!!.playAnimation()
-                    model.isClicked = true
-                    Log.d("Michael","Clicked")
-                }
-            }
-        }
-        fun bind(category: String) {
-            val model = list[adapterPosition]
-            mCategory?.text = category
-            val expanded: Boolean = model.isExpanded
-            txtDesc!!.visibility = if (expanded) View.VISIBLE else View.GONE
-        }
+        init{ mCategory = mView.findViewById(R.id.btn_category) }
+        fun bind(category: String) { mCategory?.text = category }
     }
 }

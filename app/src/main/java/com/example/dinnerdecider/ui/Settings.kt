@@ -46,8 +46,7 @@ class Settings : Fragment() {
         btnInfo!!.setOnClickListener { dialog.showDialogBox(resources.getString(R.string.title_info)
             ,resources.getString(R.string.detail_info), context) }
         btnFeedback!!.setOnClickListener { dialog.showDialogBox(resources.getString(
-            R.string.title_feedback
-        )
+            R.string.title_feedback)
             ,resources.getString(R.string.detail_feedback), context) }
 
         swDark?.setOnCheckedChangeListener { _, isChecked ->
@@ -63,7 +62,7 @@ class Settings : Fragment() {
                 Toast.makeText(context, "Dark Mode Off", Toast.LENGTH_SHORT).show()
             }
         }
-        btnDark!!.setOnClickListener { swDark!!.callOnClick() }
+        btnDark!!.setOnClickListener { swDark!!.performClick() }
         return v
     }
 }

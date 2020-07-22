@@ -14,13 +14,21 @@ class StartFragment : Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         val v :View = inflater.inflate(R.layout.fragment_start, container, false)
-        val btnStart: Button? = v.findViewById(R.id.btn_start)
+        val btnCategories: Button? = v.findViewById(R.id.btn_byCategories)
+        val btnCustom: Button? = v.findViewById(R.id.btn_byCustom)
         val btnSettings: ImageButton? = v.findViewById(R.id.btn_settings)
-        btnStart!!.setOnClickListener{
-            NavHostFragment.findNavController(this).navigate(R.id.action_startFragment_to_chooseType)
+
+        btnCategories!!.setOnClickListener{
+            NavHostFragment.findNavController(this)
+                .navigate(R.id.action_startFragment_to_chooseCategories)
+        }
+        btnCustom!!.setOnClickListener{
+            NavHostFragment.findNavController(this)
+                .navigate(R.id.action_startFragment_to_customCategories)
         }
         btnSettings!!.setOnClickListener {
-            NavHostFragment.findNavController(this).navigate(R.id.action_startFragment_to_settings)
+            NavHostFragment.findNavController(this)
+                .navigate(R.id.action_startFragment_to_settings)
         }
         return v
     }

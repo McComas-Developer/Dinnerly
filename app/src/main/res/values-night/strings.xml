@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Dinner Decider</string>
     <string name="btn_begin">Start</string>
+    <string name="btn_byCategories">Choose Categories</string>
+    <string name="btn_byCustom">Choose Custom</string>
     <string name="title_categories">Categories</string>
     <string name="title_type">Type</string>
     <string name="title_custom">Custom</string>
@@ -11,6 +13,8 @@
     <string name="detail_type">Would you like to enter custom choices or choose by category?</string>
     <!-- Dialog Box Strings -->
     <string name="okay">Okay</string>
+    <string name="cancel">Cancel</string>
+    <string name="update">Update</string>
     <string name="title_internet">Oops!</string>
     <string name="detail_internet">Something went wrong. Please check your internet connection</string>
     <string name="lng_english">English</string>
@@ -21,7 +25,12 @@
         and this app will decide which place to go and display places that fit near you. </string>
     <string name="detail_feedback">If you have any questions or concerns please contact us at: \n\n
         fakeEmail@fake.com</string>
-    <string name="detail_categories">Here is a summary explanation of what are the categories</string>
+    <string name="detail_categories">The categories listed below are some of the most common types
+        of restaurants. \n\nSelect a minimum of two categories and click the randomize button.
+        The app will then select one of the selected categories at random and display places that
+        fit near you. \n\n You can view descriptions of the categories by selecting the arrow beside
+        the category name.
+    </string>
     <!-- Decision Fragment Strings -->
     <string name="title_decided">Blank It Is!</string>
     <string name="title_places">Here are some places near you!</string>

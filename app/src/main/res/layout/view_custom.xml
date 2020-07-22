@@ -3,13 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:paddingBottom="5dp"
-    android:background="@color/primary">
+    android:background="@color/secondary">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:translationZ="5dp"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:background="@drawable/txtbx_outline">
+        android:background="@drawable/recycler_state">
 
         <EditText
             android:id="@+id/btn_category"

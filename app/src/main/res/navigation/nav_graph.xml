@@ -18,8 +18,15 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
         <action
-            android:id="@+id/action_startFragment_to_chooseType"
-            app:destination="@id/chooseType"
+            android:id="@+id/action_startFragment_to_customCategories"
+            app:destination="@id/customCategories"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_startFragment_to_chooseCategories"
+            app:destination="@id/chooseCategories"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -45,6 +52,8 @@
         tools:layout="@layout/fragment_show_decision">
         <action
             android:id="@+id/action_showDecision_to_startFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@+id/startFragment"
             app:destination="@id/startFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
@@ -56,26 +65,6 @@
         android:name="com.example.dinnerdecider.ui.Settings"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
-    <fragment
-        android:id="@+id/chooseType"
-        android:name="com.example.dinnerdecider.ui.ChooseType"
-        android:label="fragment_choose_type"
-        tools:layout="@layout/fragment_choose_type" >
-        <action
-            android:id="@+id/action_chooseType_to_chooseCategories"
-            app:destination="@id/chooseCategories"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
-        <action
-            android:id="@+id/action_chooseType_to_customCategories"
-            app:destination="@id/customCategories"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
-    </fragment>
     <fragment
         android:id="@+id/customCategories"
         android:name="com.example.dinnerdecider.ui.CustomCategories"

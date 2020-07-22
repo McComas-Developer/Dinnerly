@@ -11,12 +11,12 @@ class CustomViewModel: ViewModel() {
         list.clear()
         for(i in 0 until number)
             list.add("")
-        resetCategories()
+        resetCustom()
     }
-    fun getCategories(): List<CustomModel>{
+    fun getCustom(): List<CustomModel>{
         return customList
     }
-    fun resetCategories(){
+    private fun resetCustom(){
         customList = list.map { CustomModel(it) }
     }
     // Determine if application is online

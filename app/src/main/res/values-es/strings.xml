@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Dinner Decided</string>
+    <string name="btn_begin">Comienzo</string>
+    <string name="btn_byCategories">Elegir Categorías</string>
+    <string name="btn_byCustom">elegir personalizado</string>
+    <string name="title_categories">Categorías</string>
+    <string name="title_type">Tipo</string>
+    <string name="title_custom">Personalizado</string>
+    <string name="detail_custom">Ingrese el número de categorías:</string>
+    <string name="test_category">Categoría vacía!</string>
+    <string name="btn_random">Aleatorizar</string>
+    <string name="btn_custom">Personalizado</string>
+    <string name="detail_type">¿Desea ingresar opciones personalizadas o elegir por categoría?</string>
+    <!-- Dialog Box Strings -->
+    <string name="okay">Bueno</string>
+    <string name="cancel">Cancelar</string>
+    <string name="upgrade">Potenciar</string>
+    <string name="title_internet">¡Uy!</string>
+    <string name="detail_internet">Algo salió mal. Por favor revise su conexion a internet</string>
+    <string name="lng_english">English</string>
+    <string name="lng_spanish">Español</string>
+    <string name="msg_Dark_On">Modo oscuro activado</string>
+    <string name="msg_Dark_Off">Modo oscuro apagado</string>
+    <string name="msg_Categories">Por favor seleccione al menos dos categorías</string>
+    <string name="detail_ads">¡Los anuncios nos ayudan a crear más para ayudarte! Si quieres
+     eliminar anuncios que puede actualizar a la versión sin anuncios.</string>
+    <string name="detail_info">Creador: Michael McComas. \n\n ¡Dinner Decider es la aplicación
+        para resolver todas tus necesidades indecisas de tomar una cena! Puede seleccionar opciones
+        para elegir en nuestra lista de categorías y la aplicación decidirá a qué lugar ir y
+        mostrará los lugares que se ajusten a usted. </string>
+    <string name="detail_feedback">Si tiene alguna pregunta o inquietud, contáctenos en: \n\n
+        fakeEmail@fake.com</string>
+    <string name="detail_categories">Las categorías enumeradas a continuación son algunos de los
+        tipos más comunes de restaurantes.\n\n Seleccione un mínimo de dos categorías y haga clic
+        en el botón de aleatorización. La aplicación luego seleccionará una de las categorías
+        seleccionadas al azar y mostrará los lugares que se ajusten cerca de usted. \ n \ n
+        Puede ver descripciones de las categorías seleccionando la flecha al lado del nombre de
+        la categoría.</string>
+    <!-- Decision Fragment Strings -->
+    <string name="title_decided">¡Está en blanco!</string>
+    <string name="title_places">¡Aquí hay algunos lugares cerca de ti!</string>
+    <string name="btn_again">Elige de nuevo</string>
+    <!-- Settings Strings -->
+    <string name="title_settings">Configuraciones</string>
+    <string name="title_dark">Modo oscuro</string>
+    <string name="title_ads">Anuncios</string>
+    <string name="title_info">Acerca de</string>
+    <string name="title_feedback">Realimentación</string>
+    <string name="AppVersion">Version de aplicacion: 1.0.0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hola fragmento en blanco</string>
+    <string name="hint_choice">Ingrese una opción</string>
+</resources>

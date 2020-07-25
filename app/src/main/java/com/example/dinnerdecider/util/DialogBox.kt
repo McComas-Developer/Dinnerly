@@ -2,13 +2,19 @@ package com.example.dinnerdecider.util
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.dinnerdecider.R
+import kotlinx.android.synthetic.main.view_dialog.view.*
+import kotlinx.android.synthetic.main.view_dialog_ads.view.*
+import kotlinx.android.synthetic.main.view_dialog_ads.view.txt_dialog
+import kotlinx.android.synthetic.main.view_dialog_ads.view.txt_dialog_title
 
 class DialogBox {
     // Basic Template Dialog Box
@@ -18,9 +24,9 @@ class DialogBox {
         val inflater = LayoutInflater.from(mFrom)
         val v: View = inflater.inflate(R.layout.view_dialog, null)
         build.setView(v)
-        val close = v.findViewById<Button>(R.id.btn_ok)
-        val title = v.findViewById<TextView>(R.id.txt_dialog_title)
-        val msg = v.findViewById<TextView>(R.id.txt_dialog)
+        val close = v.btn_ok
+        val title = v.txt_dialog_title
+        val msg = v.txt_dialog
         title.text = mTitle
         msg.text = mMsg
         val box: AlertDialog = build.create()
@@ -28,18 +34,13 @@ class DialogBox {
         close.setOnClickListener { box.dismiss() }
         box.show()
     }
-    fun showDialogLanguage(mTitle: String, mMsg: String, mFrom: Context?){
+    fun showDialogBoxAds(mFrom: Context?){
         // Set Up Dialog box
         val build = AlertDialog.Builder(mFrom)
         val inflater = LayoutInflater.from(mFrom)
-        val v: View = inflater.inflate(R.layout.view_dialog_language, null)
+        val v: View = inflater.inflate(R.layout.view_dialog_ads, null)
         build.setView(v)
-        val close = v.findViewById<Button>(R.id.btn_cancel)
-        val update = v.findViewById<Button>(R.id.btn_update)
-        val title = v.findViewById<TextView>(R.id.txt_dialog_title)
-        val msg = v.findViewById<TextView>(R.id.txt_dialog)
-        title.text = mTitle
-        msg.text = mMsg
+        val close = v.btn_cancel
         val box: AlertDialog = build.create()
         box.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         close.setOnClickListener { box.dismiss() }

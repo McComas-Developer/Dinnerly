@@ -16,6 +16,7 @@ import com.example.dinnerdecider.R
 import com.example.dinnerdecider.model.CustomModel
 import com.example.dinnerdecider.model.CustomViewAdapter
 import com.example.dinnerdecider.model.CustomViewModel
+import kotlinx.android.synthetic.main.fragment_custom_categories.view.*
 
 
 class CustomCategories : Fragment(){
@@ -24,16 +25,16 @@ class CustomCategories : Fragment(){
         savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_custom_categories, container, false)
-        val btnRandom: Button? = v.findViewById(R.id.btn_random)
-        val customView: RecyclerView? = v.findViewById(R.id.recycler_custom)
-        val customAmount: EditText? = v.findViewById(R.id.edtxt_number)
+        val btnRandom: Button = v.btn_random
+        val customView: RecyclerView = v.recycler_custom
+        val customAmount: EditText = v.edtxt_number
         val model: CustomViewModel = ViewModelProvider(this)
             .get(CustomViewModel::class.java)
 
         model.setList(4)
         customList = model.getCustom()
         val customAdapter = CustomViewAdapter(customList, context)
-        customView?.apply {
+        customView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = customAdapter
         }
@@ -46,8 +47,8 @@ class CustomCategories : Fragment(){
             }
         }*/
 
-        btnRandom!!.setOnClickListener {
-            model.setList(Integer.parseInt(customAmount!!.text.toString()))
+        btnRandom.setOnClickListener {
+            model.setList(Integer.parseInt(customAmount.text.toString()))
             customAdapter.notifyDataSetChanged()
             Toast.makeText(context, "text changed: ${model.getCustom()}", Toast.LENGTH_SHORT).show()
         }

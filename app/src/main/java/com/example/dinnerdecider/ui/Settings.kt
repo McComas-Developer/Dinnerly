@@ -13,56 +13,51 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.example.dinnerdecider.util.DialogBox
 import com.example.dinnerdecider.R
+import kotlinx.android.synthetic.main.fragment_settings.view.*
 
 
 class Settings : Fragment() {
-    private var btnDark: Button? = null
-    private var swDark: Switch? = null
-    private var btnLanguage: Button? = null
-    private var btnInfo: Button? = null
-    private var btnFeedback: Button? = null
-    private var dialog = DialogBox()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val v: View = inflater.inflate(R.layout.fragment_settings, container, false)
-        btnDark = v.findViewById(R.id.btn_dark)
-        btnLanguage = v.findViewById(R.id.btn_language)
-        btnInfo = v.findViewById(R.id.btn_info)
-        btnFeedback = v.findViewById(R.id.btn_feedback)
-        swDark = v.findViewById(R.id.switch_dark)
+        val dialog = DialogBox()
+        val btnAds: Button = v.btn_ads
+        val btnDark: Button = v.btn_dark
+        val btnInfo: Button = v.btn_info
+        val btnFeedback: Button = v.btn_feedback
+        val swDark: Switch = v.switch_dark
 
         // Save state of app using SharedPreferences
         val sharedPreferences: SharedPreferences = requireContext().getSharedPreferences("sharedPrefs", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         val isDarkModeOn = sharedPreferences.getBoolean("isDarkModeOn", false)
 
-        swDark!!.isChecked = isDarkModeOn
+        swDark.isChecked = isDarkModeOn
 
-        btnLanguage!!.setOnClickListener { dialog.showDialogLanguage(resources.getString(
-            R.string.title_language
-        )
-            ,resources.getString(R.string.detail_language), context) }
-        btnInfo!!.setOnClickListener { dialog.showDialogBox(resources.getString(R.string.title_info)
+        btnAds.setOnClickListener { dialog.showDialogBoxAds(context) }
+        btnInfo.setOnClickListener { dialog.showDialogBox(resources.getString(R.string.title_info)
             ,resources.getString(R.string.detail_info), context) }
-        btnFeedback!!.setOnClickListener { dialog.showDialogBox(resources.getString(
+        btnFeedback.setOnClickListener { dialog.showDialogBox(resources.getString(
             R.string.title_feedback)
             ,resources.getString(R.string.detail_feedback), context) }
 
-        swDark?.setOnCheckedChangeListener { _, isChecked ->
+        swDark.setOnCheckedChangeListener { _, isChecked ->
             if(isChecked){
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 editor.putBoolean("isDarkModeOn", true)
                 editor.apply()
-                Toast.makeText(context, "Dark Mode On", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, resources.getString(R.string.msg_Dark_On),
+                    Toast.LENGTH_SHORT).show()
             } else{
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 editor.putBoolean("isDarkModeOn", false)
                 editor.apply()
-                Toast.makeText(context, "Dark Mode Off", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, resources.getString(R.string.msg_Dark_Off),
+                    Toast.LENGTH_SHORT).show()
             }
         }
-        btnDark!!.setOnClickListener { swDark!!.performClick() }
+        btnDark.setOnClickListener { swDark.performClick() }
         return v
     }
 }

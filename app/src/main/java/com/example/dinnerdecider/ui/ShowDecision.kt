@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import com.example.dinnerdecider.R
 import com.example.dinnerdecider.util.DialogBox
+import kotlinx.android.synthetic.main.fragment_show_decision.view.*
 import java.util.*
 
 class ShowDecision : Fragment() {
@@ -20,16 +21,16 @@ class ShowDecision : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Get variables for items in View
         val v: View = inflater.inflate(R.layout.fragment_show_decision, container, false)
-        val btnAgain: Button? = v.findViewById(R.id.btn_again)
-        val chosen: TextView? = v.findViewById(R.id.txt_decision)
-        val webSearch: WebView? = v.findViewById(R.id.web_search)
+        val btnAgain: Button = v.btn_again
+        val chosen: TextView = v.txt_decision
+        val webSearch: WebView = v.web_search
         // Randomly select a value from argument list
         list = arguments?.getStringArrayList("Michael is better than Eli") as ArrayList<String>
         val rand = Random()
         searchKey = list[rand.nextInt(list.size)]
-        chosen?.text = "$searchKey it is"
+        chosen.text = "$searchKey it is"
         // Navigate back to Main Screen
-        btnAgain!!.setOnClickListener {
+        btnAgain.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(R.id.action_showDecision_to_startFragment)
         }
         onSearchClick(webSearch)
@@ -39,7 +40,7 @@ class ShowDecision : Fragment() {
     private fun onSearchClick(v: WebView?) {
         try {
             v?.settings?.javaScriptEnabled = true;
-            v?.loadUrl("https://www.google.com/search?q=$searchKey restaurants near me");
+            v?.loadUrl("https://www.google.com/search?q=$searchKey restaurants near me")
         } catch (e: Exception) {
             val dialog = DialogBox()
             dialog.showDialogBox(resources.getString(R.string.title_internet),

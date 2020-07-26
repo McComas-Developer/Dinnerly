@@ -3,7 +3,6 @@ package com.example.dinnerdecider.ui
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnFocusChangeListener
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
@@ -28,29 +27,30 @@ class CustomCategories : Fragment(){
         val btnRandom: Button = v.btn_random
         val customView: RecyclerView = v.recycler_custom
         val customAmount: EditText = v.edtxt_number
-        val model: CustomViewModel = ViewModelProvider(this)
+        val viewModel: CustomViewModel = ViewModelProvider(this)
             .get(CustomViewModel::class.java)
 
-        model.setList(4)
-        customList = model.getCustom()
+        viewModel.setList(2)
+        customList = viewModel.getCustom()
         val customAdapter = CustomViewAdapter(customList, context)
+        //TODO: Find way to adjust recycler view properly after new data is gathered
         customView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = customAdapter
         }
-
-        /*customAmount!!.onFocusChangeListener = OnFocusChangeListener { v, hasFocus ->
+        //TODO: Adjust editText auto change for recycler view
+        customAmount.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
             if (!hasFocus) {
-                model.setList(Integer.parseInt(customAmount.text.toString()))
-                customAdapter.notifyDataSetChanged()
-                Toast.makeText(context, "text changed", Toast.LENGTH_SHORT).show()
+                viewModel.setList(Integer.parseInt(customAmount.text.toString()))
+                customAdapter.setAdapter(viewModel.getCustom(), context)
+                Toast.makeText(context, "text changed: ${viewModel.getCustom()}",
+                    Toast.LENGTH_SHORT).show()
             }
-        }*/
-
+        }
+        
         btnRandom.setOnClickListener {
-            model.setList(Integer.parseInt(customAmount.text.toString()))
-            customAdapter.notifyDataSetChanged()
-            Toast.makeText(context, "text changed: ${model.getCustom()}", Toast.LENGTH_SHORT).show()
+            /*TODO: Determine if connected to internet & make sure all text boxes have been filled*/
+            /*TODO: If no issues, grab text box data and pass to "ShowDecision" */
         }
         return v
     }

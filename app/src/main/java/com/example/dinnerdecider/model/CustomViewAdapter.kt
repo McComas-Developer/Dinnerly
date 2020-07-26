@@ -33,4 +33,10 @@ class CustomViewAdapter(private val list: List<CustomModel>, private val context
         init{ mCategory = mView.findViewById(R.id.btn_category) }
         fun bind(category: String) { mCategory?.text = category }
     }
+
+    // Adjust Adapter based on input
+    fun setAdapter(newList: List<CustomModel>, from: Context?){
+        CustomViewAdapter(newList, from)
+        notifyDataSetChanged()
+    }
 }

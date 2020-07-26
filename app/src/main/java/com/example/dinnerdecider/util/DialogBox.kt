@@ -19,7 +19,6 @@ import kotlinx.android.synthetic.main.view_dialog_ads.view.txt_dialog_title
 class DialogBox {
     // Basic Template Dialog Box
     fun showDialogBox(mTitle: String, mMsg: String, mFrom: Context?){
-        // Set Up Dialog box
         val build = AlertDialog.Builder(mFrom)
         val inflater = LayoutInflater.from(mFrom)
         val v: View = inflater.inflate(R.layout.view_dialog, null)
@@ -34,16 +33,18 @@ class DialogBox {
         close.setOnClickListener { box.dismiss() }
         box.show()
     }
+    // Dialog box about Ads
     fun showDialogBoxAds(mFrom: Context?){
-        // Set Up Dialog box
         val build = AlertDialog.Builder(mFrom)
         val inflater = LayoutInflater.from(mFrom)
         val v: View = inflater.inflate(R.layout.view_dialog_ads, null)
         build.setView(v)
         val close = v.btn_cancel
+        val upgrade = v.btn_upgrade
         val box: AlertDialog = build.create()
         box.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         close.setOnClickListener { box.dismiss() }
+        upgrade.setOnClickListener { /*TODO: When clicked, open link to upgrade app*/  }
         box.show()
     }
 }

@@ -24,7 +24,7 @@
     <string name="msg_Categories">Por favor seleccione al menos dos categorías</string>
     <string name="detail_ads">¡Los anuncios nos ayudan a crear más para ayudarte! Si quieres
      eliminar anuncios que puede actualizar a la versión sin anuncios.</string>
-    <string name="detail_info">Creador: Michael McComas. \n\n ¡Dinner Decider es la aplicación
+    <string name="detail_info">Creador: Michael McComas. \n\n ¡Dinner Decided es la aplicación
         para resolver todas tus necesidades indecisas de tomar una cena! Puede seleccionar opciones
         para elegir en nuestra lista de categorías y la aplicación decidirá a qué lugar ir y
         mostrará los lugares que se ajusten a usted. </string>
@@ -47,7 +47,7 @@
     <string name="title_info">Acerca de</string>
     <string name="title_feedback">Realimentación</string>
     <string name="AppVersion">Version de aplicacion: 1.0.0</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hola fragmento en blanco</string>
     <string name="hint_choice">Ingrese una opción</string>
 </resources>

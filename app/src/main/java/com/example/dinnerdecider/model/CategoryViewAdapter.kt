@@ -11,6 +11,7 @@ import com.airbnb.lottie.LottieAnimationView
 import com.example.dinnerdecider.R
 import kotlinx.android.synthetic.main.view_categories.view.*
 
+//TODO: Resolve error when clicking item in view (other items clicked but not clicked in model)
 class CategoryViewAdapter(private val list: List<CategoryModel>, private val context: Context) :
     RecyclerView.Adapter<CategoryViewAdapter.CategoryViewHolder>() {
 
@@ -48,8 +49,8 @@ class CategoryViewAdapter(private val list: List<CategoryModel>, private val con
             mView.setOnClickListener {
                 val model = list[adapterPosition]
                 if(model.isClicked){
-                    /*mCheck.progress = 0f
-                    mCheck.pauseAnimation()*/
+                    //mCheck.progress = 0f
+                    //mCheck.pauseAnimation()
                     model.isClicked = false
                     Log.d("Michael","Un-clicked")
                 }
@@ -58,7 +59,7 @@ class CategoryViewAdapter(private val list: List<CategoryModel>, private val con
                     model.isClicked = true
                     Log.d("Michael","Clicked")
                 }
-                notifyDataSetChanged()
+                notifyItemChanged(adapterPosition)
             }
             mArrow.setOnClickListener {
                 val model = list[adapterPosition]

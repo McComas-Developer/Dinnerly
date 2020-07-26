@@ -33,9 +33,9 @@ class ChooseCategories : Fragment() {
         val categoryView: RecyclerView = v.recycler_categories
         val randomize: Button = v.btn_random
         val btnInfo: ImageButton = v.img_info
-        val model: CategoryViewModel = ViewModelProvider(this)
+        val viewModel: CategoryViewModel = ViewModelProvider(this)
             .get(CategoryViewModel::class.java)
-        categoryList = model.getCategories()
+        categoryList = viewModel.getCategories()
 
         // Animate expansion of RecyclerView
         (categoryView.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
@@ -50,7 +50,7 @@ class ChooseCategories : Fragment() {
 
         // If connected to internet, find selected categories and start next fragment
         randomize.setOnClickListener {
-            if (model.isConnected()){
+            if (viewModel.isConnected()){
                 val result = findSelected().map{ it.title }.takeIf { it.size >= 2 }
                 if (result != null){
                     val bundle = Bundle()
@@ -63,8 +63,7 @@ class ChooseCategories : Fragment() {
             }
             else{
                 val dialog = DialogBox()
-                dialog.showDialogBox(resources.getString(R.string.title_internet),
-                    resources.getString(R.string.detail_internet), context)
+                dialog.showDialogBox(resources.getString(R.string.title_internet), resources.getString(R.string.detail_internet), context)
             }
         }
         return v
@@ -73,7 +72,6 @@ class ChooseCategories : Fragment() {
     private fun findSelected() = categoryList.filter { (it.isClicked) }
     // Key for passed arguments
     companion object { const val key = "Michael is better than Eli" }
-
     // Reset data
     override fun onStop() {
         super.onStop()

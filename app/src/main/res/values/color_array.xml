@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Palette color for spinning wheel with light mode -->
+    <color name="blue1">#AED6F1</color>
+    <color name="blue2">#85C1E9</color>
+    <color name="blue3">#5DADE2</color>
+    <color name="blue4">#3498DB</color>
+    <color name="blue5">#2E86C1</color>
+    <color name="blue6">#2874A6</color>
+    <color name="green1">#A3E4D7</color>
+    <color name="green2">#76D7C4</color>
+    <color name="green3">#48C9B0</color>
+    <color name="green4">#1ABC9C</color>
+    <color name="green5">#17A589</color>
+    <color name="green6">#148F77</color>
+    <!-- Palette color for spinning wheel with dark mode -->
+    <color name="grey1">#D5DBDB</color>
+    <color name="grey2">#BFC9CA</color>
+    <color name="grey3">#AAB7B8</color>
+    <color name="grey4">#95A5A6</color>
+    <color name="grey5">#839192</color>
+    <color name="grey6">#717D7E</color>
+    <color name="dark1">#AEB6BF</color>
+    <color name="dark2">#85929E</color>
+    <color name="dark3">#5D6D7E</color>
+    <color name="dark4">#34495E</color>
+    <color name="dark5">#2E4053</color>
+    <color name="dark6">#283747</color>
+
+    <array name="palette">
+        <item>@color/blue1</item>
+        <item>@color/blue2</item>
+        <item>@color/blue3</item>
+        <item>@color/blue4</item>
+        <item>@color/blue5</item>
+        <item>@color/blue6</item>
+        <item>@color/green1</item>
+        <item>@color/green2</item>
+        <item>@color/green3</item>
+        <item>@color/green4</item>
+        <item>@color/green5</item>
+        <item>@color/green6</item>
+    </array>
+
+    <array name="palette_dark">
+        <item>@color/grey1</item>
+        <item>@color/grey2</item>
+        <item>@color/grey3</item>
+        <item>@color/grey4</item>
+        <item>@color/grey5</item>
+        <item>@color/grey6</item>
+        <item>@color/dark1</item>
+        <item>@color/dark2</item>
+        <item>@color/dark3</item>
+        <item>@color/dark4</item>
+        <item>@color/dark5</item>
+        <item>@color/dark6</item>
+    </array>
+</resources>

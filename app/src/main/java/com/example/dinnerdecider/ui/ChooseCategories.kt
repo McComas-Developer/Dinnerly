@@ -55,8 +55,9 @@ class ChooseCategories : Fragment() {
                 if (result != null){
                     val bundle = Bundle()
                     bundle.putStringArrayList(key, result as ArrayList<String>?)
+
                     NavHostFragment.findNavController(this)
-                        .navigate(R.id.action_chooseCategories_to_showDecision, bundle)
+                       .navigate(R.id.action_chooseCategories_to_spinWheel, bundle)
                 } else
                     Toast.makeText(context, resources.getString(R.string.msg_Categories),
                         Toast.LENGTH_SHORT).show()

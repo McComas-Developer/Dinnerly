@@ -13,14 +13,19 @@ class CustomViewModel: ViewModel() {
             list.add("")
         resetCustom()
     }
-    fun getCustom(): List<CustomModel>{
-        return customList
+
+    fun allFieldsFilled(): Boolean{
+        for(i in 0 until getCustomCount()){
+            if(customList[i].title == "")
+                return false
+        }
+        return true
     }
-    private fun resetCustom(){
-        customList = list.map { CustomModel(it) }
-    }
+
+    fun getCustom(): List<CustomModel> = customList
+    private fun getCustomCount(): Int = customList.count()
+    private fun resetCustom(){ customList = list.map { CustomModel(it) } }
+
     // Determine if application is online
-    fun isConnected(): Boolean{
-        return Connectivity.isOnline
-    }
+    fun isConnected(): Boolean = Connectivity.isOnline
 }

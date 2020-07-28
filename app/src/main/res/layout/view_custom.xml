@@ -13,9 +13,8 @@
         android:background="@drawable/recycler_state">
 
         <EditText
-            android:id="@+id/btn_category"
+            android:id="@+id/edit_txt_category"
             android:textSize="20sp"
-            android:text="@string/test_category"
             android:gravity="center"
             android:inputType="textAutoCorrect"
             android:maxLength="15"

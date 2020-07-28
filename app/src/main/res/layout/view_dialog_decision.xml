@@ -45,8 +45,7 @@
                     android:id="@+id/img_category"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:src="@drawable/burger" />
+                    android:layout_gravity="center"/>
             </androidx.cardview.widget.CardView>
 
 

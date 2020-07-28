@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.adefruandta.spinningwheel.SpinningWheelView
 import com.adefruandta.spinningwheel.SpinningWheelView.OnRotationListener
@@ -17,10 +16,11 @@ import java.util.ArrayList
 
 class SpinWheel : Fragment(){
     private var list = arrayListOf<String>()
+    private lateinit var wheelView: SpinningWheelView
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_spin_wheel, container, false)
-        val wheelView = v.wheel as SpinningWheelView
+        wheelView = v.wheel as SpinningWheelView
         val dots = v.ani_dot
 
         // Grab list and shuffle to ensure same category is not repeatedly chosen
@@ -35,13 +35,14 @@ class SpinWheel : Fragment(){
         if (isDarkModeOn!!) {
             wheelView.colors = resources.getIntArray(R.array.palette_dark)
             dots.setAnimation("dots_dark.json")
-        } else { wheelView.colors = resources.getIntArray(R.array.palette) }
+        } else wheelView.colors = resources.getIntArray(R.array.palette)
 
         // Set listener for rotation event
         wheelView.onRotationListener = object : OnRotationListener<String> {
             override fun onRotation() { Log.d("Michael", "Rotating") }
             override fun onStopRotation(item: String) {
                 DialogBox().showDialogBoxDecision(this@SpinWheel, context, item)
+                wheelView.onRotationListener = null
             }
         }
 
@@ -49,5 +50,10 @@ class SpinWheel : Fragment(){
         wheelView.isEnabled = false
         wheelView.rotate(50f, 8000, 50)
         return v
+    }
+
+    override fun onStop() {
+        super.onStop()
+        wheelView.onRotationListener = null
     }
 }

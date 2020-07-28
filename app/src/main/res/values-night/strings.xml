@@ -19,7 +19,6 @@
     <string name="upgrade">Upgrade</string>
     <string name="title_internet">Oops!</string>
     <string name="detail_internet">Something went wrong. Please check your internet connection</string>
-    <string name="msg_Categories">Please select at least two categories</string>
     <string name="detail_ads">Ads help support us to create more to help you! If you wish to
     remove ads you can upgrade to the ad free version.</string>
     <string name="detail_info">Creator: Michael McComas. \n\n Dinner Decided is the app to solve all
@@ -36,6 +35,8 @@
     <!-- Toast Messages -->
     <string name="msg_Dark_On">Dark Mode On</string>
     <string name="msg_Dark_Off">Dark Mode Off</string>
+    <string name="msg_custom_error">Please fill out all category boxes</string>
+    <string name="msg_Categories">Please select at least two categories</string>
     <string name="msg_choice_error">An error occurred. Please check your internet connection and try
         again</string>
     <!-- Decision Fragment Strings -->

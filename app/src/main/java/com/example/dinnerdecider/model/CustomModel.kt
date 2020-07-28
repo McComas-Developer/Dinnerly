@@ -1,3 +1,3 @@
 package com.example.dinnerdecider.model
 
-data class CustomModel(val title: String = "")
+data class CustomModel(var title: String = "")

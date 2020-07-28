@@ -47,14 +47,12 @@ class Settings : Fragment() {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 editor.putBoolean("isDarkModeOn", true)
                 editor.apply()
-                Toast.makeText(context, resources.getString(R.string.msg_Dark_On),
-                    Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, resources.getString(R.string.msg_Dark_On), Toast.LENGTH_SHORT).show()
             } else{
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 editor.putBoolean("isDarkModeOn", false)
                 editor.apply()
-                Toast.makeText(context, resources.getString(R.string.msg_Dark_Off),
-                    Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, resources.getString(R.string.msg_Dark_Off), Toast.LENGTH_SHORT).show()
             }
         }
         btnDark.setOnClickListener { swDark.performClick() }

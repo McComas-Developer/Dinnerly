@@ -38,13 +38,6 @@
         android:label="fragment_choose_categories"
         tools:layout="@layout/fragment_choose_categories" >
         <action
-            android:id="@+id/action_chooseCategories_to_showDecision"
-            app:destination="@id/showDecision"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
-        <action
             android:id="@+id/action_chooseCategories_to_spinWheel"
             app:destination="@id/spinWheel"
             app:enterAnim="@anim/slide_in_right"
@@ -59,13 +52,7 @@
         tools:layout="@layout/fragment_show_decision">
         <action
             android:id="@+id/action_showDecision_to_startFragment"
-            app:popUpToInclusive="true"
-            app:popUpTo="@+id/startFragment"
-            app:destination="@id/startFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:destination="@id/startFragment" />
     </fragment>
     <fragment
         android:id="@+id/settings"
@@ -76,7 +63,15 @@
         android:id="@+id/customCategories"
         android:name="com.example.dinnerdecider.ui.CustomCategories"
         android:label="fragment_custom_categories"
-        tools:layout="@layout/fragment_custom_categories" />
+        tools:layout="@layout/fragment_custom_categories" >
+        <action
+            android:id="@+id/action_customCategories_to_spinWheel"
+            app:destination="@id/spinWheel"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
     <fragment
         android:id="@+id/spinWheel"
         android:name="com.example.dinnerdecider.ui.SpinWheel"

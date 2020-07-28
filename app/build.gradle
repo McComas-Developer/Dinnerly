@@ -44,5 +44,7 @@ dependencies {
     androidTestImplementation "androidx.navigation:navigation-testing:2.3.0"
 
     // =========== Lottie Animation =========== \\
-    implementation 'com.airbnb.android:lottie:3.3.0'
+    implementation 'com.airbnb.android:lottie:3.4.0'
+
+    implementation 'com.adefruandta.spinningwheel:spinningwheel:0.1.0'
 }

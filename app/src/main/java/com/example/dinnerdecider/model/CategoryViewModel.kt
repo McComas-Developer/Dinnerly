@@ -11,14 +11,9 @@ class CategoryViewModel: ViewModel() {
         "Breakfast", "Seafood", "Cuban").sorted()
     private var categoryList: List<CategoryModel> = list.map { CategoryModel(it) }
 
-    fun getCategories(): List<CategoryModel>{
-        return categoryList
-    }
-    fun resetCategories(){
-        categoryList = list.map { CategoryModel(it) }
-    }
+    fun getCategories(): List<CategoryModel> = categoryList
+    fun resetCategories(){ categoryList = list.map { CategoryModel(it) } }
+
     // Determine if application is online
-    fun isConnected(): Boolean{
-        return Connectivity.isOnline
-    }
+    fun isConnected(): Boolean = Connectivity.isOnline
 }

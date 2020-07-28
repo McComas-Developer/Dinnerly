@@ -21,7 +21,6 @@ import com.example.dinnerdecider.util.DialogBox
 import kotlinx.android.synthetic.main.fragment_choose_categories.view.*
 import java.util.ArrayList
 
-
 class ChooseCategories : Fragment() {
     private lateinit var categoryList: List<CategoryModel>
 
@@ -55,16 +54,15 @@ class ChooseCategories : Fragment() {
                 if (result != null){
                     val bundle = Bundle()
                     bundle.putStringArrayList(key, result as ArrayList<String>?)
+
                     NavHostFragment.findNavController(this)
-                        .navigate(R.id.action_chooseCategories_to_showDecision, bundle)
-                } else
-                    Toast.makeText(context, resources.getString(R.string.msg_Categories),
+                       .navigate(R.id.action_chooseCategories_to_spinWheel, bundle)
+                }
+                else Toast.makeText(context, resources.getString(R.string.msg_Categories),
                         Toast.LENGTH_SHORT).show()
             }
-            else{
-                val dialog = DialogBox()
-                dialog.showDialogBox(resources.getString(R.string.title_internet), resources.getString(R.string.detail_internet), context)
-            }
+            else DialogBox().showDialogBox(resources.getString(R.string.title_internet),
+                    resources.getString(R.string.detail_internet), context)
         }
         return v
     }

@@ -1,18 +1,25 @@
 package com.example.dinnerdecider.model
 
+import android.app.Application
+import android.content.Context
 import androidx.lifecycle.ViewModel
+import com.example.dinnerdecider.Repository
+import com.example.dinnerdecider.db.CategoryDb
+import com.example.dinnerdecider.ui.ChooseCategories
 import com.example.dinnerdecider.util.Connectivity
 
 class CategoryViewModel: ViewModel() {
     //TODO: Find proper way to grab category list, if language has changed
     //TODO: Create Room database for categories and their descriptions?
-    private var list = listOf("Fast Food", "Mexican", "Chinese", "Japanese", "Thai", "Southern",
-        "Italian", "Buffet", "Steakhouse", "Deli", "Barbecue", "Indian", "Vegetarian", "Sushi",
-        "Breakfast", "Seafood", "Cuban").sorted()
-    private var categoryList: List<CategoryModel> = list.map { CategoryModel(it) }
+    lateinit var db: CategoryDb
+    private lateinit var repository: Repository
+    private lateinit var categoryList: List<CategoryModel>
 
+    fun getTempList() = repository.getCategories()
     fun getCategories(): List<CategoryModel> = categoryList
-    fun resetCategories(){ categoryList = list.map { CategoryModel(it) } }
+    fun setRepository(){ repository = Repository(db)}
+    fun setDatabase(context: Context){ db = CategoryDb.getAppDataBase(context)!! }
+    fun setCategories(){ categoryList = repository.getList().map { CategoryModel(it) } }
 
     // Determine if application is online
     fun isConnected(): Boolean = Connectivity.isOnline

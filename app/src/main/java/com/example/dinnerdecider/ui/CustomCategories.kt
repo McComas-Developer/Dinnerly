@@ -53,8 +53,9 @@ class CustomCategories : Fragment(){
         })
         
         btnRandom.setOnClickListener {
+            val amount = Integer.parseInt(customAmount.text.toString())
             if(viewModel.isConnected()){
-                if(viewModel.allFieldsFilled()){
+                if(viewModel.allFieldsFilled() && amount >= 2){
                     val bundle = Bundle()
                     val list = viewModel.getCustom().map { it.title }
                     bundle.putStringArrayList(ChooseCategories.key, list as ArrayList<String>)

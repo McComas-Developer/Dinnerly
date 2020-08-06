@@ -37,7 +37,8 @@
     <string name="msg_Dark_On">Modo oscuro activado</string>
     <string name="msg_Dark_Off">Modo oscuro apagado</string>
     <string name="msg_Categories">Por favor seleccione al menos dos categorías</string>
-    <string name="msg_custom_error">Por favor complete todos los cuadros de categoría</string>
+    <string name="msg_custom_error">Asegúrese de que haya al menos dos cuadros de categoría y que
+        todos estén llenos</string>
     <string name="msg_choice_error">Ocurrió un error. Verifique su conexión a Internet e intente
         nuevamente</string>
     <!-- Decision Fragment Strings -->

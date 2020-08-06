@@ -1,11 +1,9 @@
 package com.example.dinnerdecider.model
 
-import android.app.Application
 import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.example.dinnerdecider.Repository
+import com.example.dinnerdecider.db.Repository
 import com.example.dinnerdecider.db.CategoryDb
-import com.example.dinnerdecider.ui.ChooseCategories
 import com.example.dinnerdecider.util.Connectivity
 
 class CategoryViewModel: ViewModel() {
@@ -17,7 +15,8 @@ class CategoryViewModel: ViewModel() {
 
     fun getTempList() = repository.getCategories()
     fun getCategories(): List<CategoryModel> = categoryList
-    fun setRepository(){ repository = Repository(db)}
+    fun setRepository(){ repository = Repository(db)
+    }
     fun setDatabase(context: Context){ db = CategoryDb.getAppDataBase(context)!! }
     fun setCategories(){ categoryList = repository.getList().map { CategoryModel(it) } }
 

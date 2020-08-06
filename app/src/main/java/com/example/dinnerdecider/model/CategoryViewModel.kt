@@ -15,9 +15,10 @@ class CategoryViewModel: ViewModel() {
 
     fun getTempList() = repository.getCategories()
     fun getCategories(): List<CategoryModel> = categoryList
-    fun setRepository(){ repository = Repository(db)
+    fun setInfo(context: Context){
+        db = CategoryDb.getAppDataBase(context)!!
+        repository = Repository(db)
     }
-    fun setDatabase(context: Context){ db = CategoryDb.getAppDataBase(context)!! }
     fun setCategories(){ categoryList = repository.getList().map { CategoryModel(it) } }
 
     // Determine if application is online

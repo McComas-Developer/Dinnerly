@@ -40,8 +40,7 @@ class ChooseCategories : Fragment() {
         val viewModel: CategoryViewModel = ViewModelProvider(this)
             .get(CategoryViewModel::class.java)
 
-        viewModel.setDatabase(requireContext())
-        viewModel.setRepository()
+        viewModel.setInfo(requireContext())
         viewModel.setCategories()
         categoryList = viewModel.getCategories()
         // Testing out Room

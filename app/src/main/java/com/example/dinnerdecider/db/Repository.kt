@@ -13,7 +13,7 @@ class Repository(private val db: CategoryDb): RepositoryOutline {
     private val categoryInfo = list.map { Categories(it) }
     private val categoryDao = db.categoryDao()
 
-    override fun getQuestions() {
+    override fun getCategories() {
         CoroutineScope(Dispatchers.IO).launch{
             for(i in categoryInfo.indices)
                 categoryDao.addCategory(categoryInfo[i])

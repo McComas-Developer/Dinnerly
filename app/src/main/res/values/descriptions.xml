@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="descriptions_english">
+        <item>Barbecue</item>
+        <item>Breakfast</item>
+        <item>Buffet</item>
+        <item>Chinese</item>
+        <item>Cuban</item>
+        <item>Deli</item>
+        <item>Places such as McDonalds, Burger King, and Taco Bell are in this category</item>
+        <item>Indian</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Mexican</item>
+        <item>Seafood</item>
+        <item>Southern</item>
+        <item>Steakhouse</item>
+        <item>Sushi</item>
+        <item>Thai</item>
+        <item>Vegetarian</item>
+    </string-array>
+
+    <string-array name="descriptions_spanish">
+        <item>Barbecue</item>
+        <item>Breakfast</item>
+        <item>Buffet</item>
+        <item>Chinese</item>
+        <item>Cuban</item>
+        <item>Deli</item>
+        <item>Fast Food</item>
+        <item>Indian</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Mexican</item>
+        <item>Seafood</item>
+        <item>Southern</item>
+        <item>Steakhouse</item>
+        <item>Sushi</item>
+        <item>Thai</item>
+        <item>Vegetarian</item>
+    </string-array>
+</resources>

@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,14 +20,9 @@ import com.example.dinnerdecider.model.CategoryModel
 import com.example.dinnerdecider.model.CategoryViewAdapter
 import com.example.dinnerdecider.model.CategoryViewModel
 import com.example.dinnerdecider.R
-import com.example.dinnerdecider.db.Categories
-import com.example.dinnerdecider.db.CategoryDb
 import com.example.dinnerdecider.util.DialogBox
 import kotlinx.android.synthetic.main.fragment_choose_categories.view.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import java.util.ArrayList
+import java.util.*
 
 class ChooseCategories : Fragment() {
     private lateinit var categoryList: List<CategoryModel>
@@ -40,19 +37,23 @@ class ChooseCategories : Fragment() {
         val viewModel: CategoryViewModel = ViewModelProvider(this)
             .get(CategoryViewModel::class.java)
 
+        // TESTING ROOM
         viewModel.setInfo(requireContext())
-        viewModel.setCategories()
-        categoryList = viewModel.getCategories()
-        // Testing out Room
-        viewModel.getTempList()
 
-        // Animate expansion of RecyclerView
-        (categoryView.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
-        // Set recyclerview layout and adapter
-        categoryView.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = CategoryViewAdapter(categoryList, context)
-        }
+        viewModel.setCategoryList(resources.getStringArray(R.array.categories_english),
+            resources.getStringArray(R.array.categories_spanish))
+        viewModel.getCategories().observe(viewLifecycleOwner, Observer {
+            categoryList = it
+            // Animate expansion of RecyclerView
+            Log.d("Michael", "Data changed")
+            (categoryView.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+            // Set recyclerview layout and adapter
+            categoryView.apply {
+                layoutManager = LinearLayoutManager(context)
+                adapter = CategoryViewAdapter(categoryList, context)
+            }
+        })
+
 
         btnInfo.setOnClickListener { DialogBox().showDialogBox(resources.getString(R.string.title_categories),
         resources.getString(R.string.detail_categories), context) }
@@ -76,12 +77,12 @@ class ChooseCategories : Fragment() {
         return v
     }
     // Find selected options
-    private fun findSelected() = categoryList.filter { (it.isClicked) }
+    private fun findSelected() = categoryList.filter { it.isClicked }
     // Key for passed arguments
     companion object { const val key = "Michael is better than Eli" }
     // Reset data
     override fun onStop() {
         super.onStop()
-        ViewModelProvider(this).get(CategoryViewModel::class.java).setCategories()
+        ViewModelProvider(this).get(CategoryViewModel::class.java).getCategories()
     }
 }

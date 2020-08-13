@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories_english">
+        <item>Barbecue</item>
+        <item>Breakfast</item>
+        <item>Buffet</item>
+        <item>Chinese</item>
+        <item>Cuban</item>
+        <item>Deli</item>
+        <item>Fast Food</item>
+        <item>Indian</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Mexican</item>
+        <item>Seafood</item>
+        <item>Southern</item>
+        <item>Steakhouse</item>
+        <item>Sushi</item>
+        <item>Thai</item>
+        <item>Vegetarian</item>
+    </string-array>
+
+    <string-array name="categories_spanish">
+        <item>Parilla</item>
+        <item>Desayuno</item>
+        <item>Buffet</item>
+        <item>Chino</item>
+        <item>Cubano</item>
+        <item>Fiambres</item>
+        <item>Comida Rápida</item>
+        <item>Indio</item>
+        <item>Italiano</item>
+        <item>Japonés</item>
+        <item>Mexicano</item>
+        <item>Mariscos</item>
+        <item>Del Sur</item>
+        <item>Asador</item>
+        <item>Sushi</item>
+        <item>Tailandés</item>
+        <item>Vegetariano</item>
+    </string-array>
+</resources>

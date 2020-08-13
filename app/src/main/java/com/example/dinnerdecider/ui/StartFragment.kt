@@ -23,6 +23,8 @@ class StartFragment : Fragment(){
         val imgAppIcon: ImageView = v.img_app_icon
         val btnSettings: ImageButton = v.btn_settings
 
+        //TODO: If Room database tables are empty, add data based on language
+
         // Set image icon based on dark/light mode
         val sharedPreferences = context?.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
         val isDarkModeOn = sharedPreferences?.getBoolean("isDarkModeOn", false)

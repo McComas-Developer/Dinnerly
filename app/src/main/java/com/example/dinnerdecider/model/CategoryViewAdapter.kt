@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
 import com.example.dinnerdecider.R
@@ -23,8 +24,7 @@ class CategoryViewAdapter(private val list: List<CategoryModel>, private val con
     }
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         val model = list[position]
-        val category: String = model.title
-        holder.mCategory.text = category
+        holder.mCategory.text = model.title
 
         val expanded: Boolean = model.isExpanded
         if(model.isClicked){

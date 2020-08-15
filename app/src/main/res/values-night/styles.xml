@@ -1,9 +1,13 @@
 <resources>
-    <!-- Base application theme. -->
+    <!-- Dark Mode Theme -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/statusBar</item>
+        <item name="colorControlHighlight">@color/ripple_color</item>
+    </style>
+
+    <!-- Splash Screen Dark Theme -->
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">#585858</item>
     </style>
 
 </resources>

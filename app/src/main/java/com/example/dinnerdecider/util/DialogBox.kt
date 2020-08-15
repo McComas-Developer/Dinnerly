@@ -2,11 +2,14 @@ package com.example.dinnerdecider.util
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import com.example.dinnerdecider.R
@@ -14,6 +17,7 @@ import kotlinx.android.synthetic.main.view_dialog.view.*
 import kotlinx.android.synthetic.main.view_dialog_ads.view.*
 import kotlinx.android.synthetic.main.view_dialog_ads.view.txt_dialog
 import kotlinx.android.synthetic.main.view_dialog_ads.view.txt_dialog_title
+import kotlinx.android.synthetic.main.view_dialog_darkmode.view.*
 import kotlinx.android.synthetic.main.view_dialog_decision.view.*
 
 class DialogBox {
@@ -39,12 +43,59 @@ class DialogBox {
         val inflater = LayoutInflater.from(mFrom)
         val v: View = inflater.inflate(R.layout.view_dialog_ads, null)
         build.setView(v)
-        val close = v.btn_cancel
+        val close = v.btn_Cancel
         val upgrade = v.btn_upgrade
         val box: AlertDialog = build.create()
         box.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         close.setOnClickListener { box.dismiss() }
         upgrade.setOnClickListener { /*TODO: When clicked, open link to upgrade app*/  }
+        box.show()
+    }
+    // Dark Mode Dialog Box
+    fun showDialogBoxDarkMode(mFrom: Context?){
+        val build = AlertDialog.Builder(mFrom)
+        val inflater = LayoutInflater.from(mFrom)
+        val v: View = inflater.inflate(R.layout.view_dialog_darkmode, null)
+        build.setView(v)
+        val cancel = v.btn_cancel
+        val update = v.btn_update
+        val manual = v.switch_manual
+        val auto = v.switch_automatic
+        val box: AlertDialog = build.create()
+        box.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        // Save state of app using SharedPreferences
+        val sharedPreferences: SharedPreferences = mFrom!!.getSharedPreferences("sharedPrefs",
+            Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        manual.isChecked = sharedPreferences.getBoolean("isDarkModeOn", false)
+        auto.isChecked = sharedPreferences.getBoolean("isOSDarkModeOn", false)
+
+        manual.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked){
+                editor.putBoolean("isDarkModeOn", true)
+                auto.isChecked = false
+            }
+            else editor.putBoolean("isDarkModeOn", false)
+        }
+        auto.setOnCheckedChangeListener { _ , isChecked ->
+            if(isChecked){
+                editor.putBoolean("isOSDarkModeOn", true)
+                manual.isChecked = false
+            }
+            else editor.putBoolean("isOSDarkModeOn", false)
+        }
+        update.setOnClickListener {
+            box.dismiss()
+            if(auto.isChecked)
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+            else if(manual.isChecked)
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            else
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            editor.apply()
+        }
+        cancel.setOnClickListener { box.dismiss() }
         box.show()
     }
     // Dialog box about dinner decision

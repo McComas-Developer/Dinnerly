@@ -29,7 +29,6 @@ class ChooseCategories : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        // Get variables for items in view
         val v: View = inflater.inflate(R.layout.fragment_choose_categories, container, false)
         val categoryView: RecyclerView = v.recycler_categories
         val randomize: Button = v.btn_random
@@ -37,23 +36,20 @@ class ChooseCategories : Fragment() {
         val viewModel: CategoryViewModel = ViewModelProvider(this)
             .get(CategoryViewModel::class.java)
 
-        // TESTING ROOM
+        // Set database
         viewModel.setInfo(requireContext())
-
+        (categoryView.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+        // Send Arrays to database for input if needed
         viewModel.setCategoryList(resources.getStringArray(R.array.categories_english),
             resources.getStringArray(R.array.categories_spanish))
+        // Observe changes to database category list
         viewModel.getCategories().observe(viewLifecycleOwner, Observer {
             categoryList = it
-            // Animate expansion of RecyclerView
-            Log.d("Michael", "Data changed")
-            (categoryView.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
-            // Set recyclerview layout and adapter
             categoryView.apply {
                 layoutManager = LinearLayoutManager(context)
                 adapter = CategoryViewAdapter(categoryList, context)
             }
         })
-
 
         btnInfo.setOnClickListener { DialogBox().showDialogBox(resources.getString(R.string.title_categories),
         resources.getString(R.string.detail_categories), context) }
@@ -62,11 +58,13 @@ class ChooseCategories : Fragment() {
         randomize.setOnClickListener {
             if (viewModel.isConnected()){
                 val result = findSelected().map{ it.title }.takeIf { it.size >= 2 }
-                if (result != null){
-                    Bundle().putStringArrayList(key, result as ArrayList<String>?)
+                Log.d("Michael", result.toString())
+                if (!result.isNullOrEmpty()){
+                    val bundle = Bundle()
+                    bundle.putStringArrayList(key, result as ArrayList<String>)
 
                     NavHostFragment.findNavController(this)
-                       .navigate(R.id.action_chooseCategories_to_spinWheel, Bundle())
+                       .navigate(R.id.action_chooseCategories_to_spinWheel, bundle)
                 }
                 else Toast.makeText(context, resources.getString(R.string.msg_Categories),
                         Toast.LENGTH_SHORT).show()

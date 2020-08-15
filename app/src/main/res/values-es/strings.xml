@@ -11,11 +11,12 @@
     <string name="title_wheel">Hilado</string>
     <string name="title_custom">Personalizado</string>
     <string name="title_categories">Categorías</string>
-    <string name="detail_custom">Ingrese el número de categorías:</string>
+    <string name="detail_custom">Número de categorías:</string>
     <string name="test_category">Categoría vacía!</string>
     <!-- Dialog Box Strings -->
     <string name="okay">Bueno</string>
     <string name="cancel">Cancelar</string>
+    <string name="update">Actualizar</string>
     <string name="upgrade">Potenciar</string>
     <string name="title_internet">¡Uy!</string>
     <string name="detail_internet">Algo salió mal. Por favor revise su conexion a internet</string>
@@ -33,12 +34,13 @@
         seleccionadas al azar y mostrará los lugares que se ajusten cerca de usted. \ n \ n
         Puede ver descripciones de las categorías seleccionando la flecha al lado del nombre de
         la categoría.</string>
+    <string name="detail_manual">Manual</string>
+    <string name="detail_automatic">Automático</string>
     <!-- Toast Messages -->
     <string name="msg_Dark_On">Modo oscuro activado</string>
     <string name="msg_Dark_Off">Modo oscuro apagado</string>
     <string name="msg_Categories">Por favor seleccione al menos dos categorías</string>
-    <string name="msg_custom_error">Asegúrese de que haya al menos dos cuadros de categoría y que
-        todos estén llenos</string>
+    <string name="msg_custom_error">Deben completarse todas las categorías</string>
     <string name="msg_choice_error">Ocurrió un error. Verifique su conexión a Internet e intente
         nuevamente</string>
     <!-- Decision Fragment Strings -->

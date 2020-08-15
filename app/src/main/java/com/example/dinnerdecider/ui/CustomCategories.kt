@@ -43,7 +43,8 @@ class CustomCategories : Fragment(){
 
         customAmount.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
-                if(customAmount.text.toString() != ""){
+                val text = customAmount.text.toString()
+                if(text != "" && text != "0" && text != "1"){
                     viewModel.setList(Integer.parseInt(customAmount.text.toString()))
                     customAdapter.customList = viewModel.getCustom()
                 }
@@ -53,9 +54,8 @@ class CustomCategories : Fragment(){
         })
         
         btnRandom.setOnClickListener {
-            val amount = Integer.parseInt(customAmount.text.toString())
             if(viewModel.isConnected()){
-                if(viewModel.allFieldsFilled() && amount >= 2){
+                if(viewModel.allFieldsFilled()){
                     val bundle = Bundle()
                     val list = viewModel.getCustom().map { it.title }
                     bundle.putStringArrayList(ChooseCategories.key, list as ArrayList<String>)

@@ -1,15 +1,10 @@
 package com.example.dinnerdecider.ui
 
-import android.content.Context.MODE_PRIVATE
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Switch
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.example.dinnerdecider.util.DialogBox
 import com.example.dinnerdecider.R
@@ -26,14 +21,6 @@ class Settings : Fragment() {
         val btnDark: Button = v.btn_dark
         val btnInfo: Button = v.btn_info
         val btnFeedback: Button = v.btn_feedback
-        val swDark: Switch = v.switch_dark
-
-        // Save state of app using SharedPreferences
-        val sharedPreferences: SharedPreferences = requireContext().getSharedPreferences("sharedPrefs", MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        val isDarkModeOn = sharedPreferences.getBoolean("isDarkModeOn", false)
-
-        swDark.isChecked = isDarkModeOn
 
         btnAds.setOnClickListener { dialog.showDialogBoxAds(context) }
         btnInfo.setOnClickListener { dialog.showDialogBox(resources.getString(R.string.title_info)
@@ -42,7 +29,7 @@ class Settings : Fragment() {
             R.string.title_feedback)
             ,resources.getString(R.string.detail_feedback), context) }
 
-        swDark.setOnCheckedChangeListener { _, isChecked ->
+        /*swDark.setOnCheckedChangeListener { _, isChecked ->
             if(isChecked){
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 editor.putBoolean("isDarkModeOn", true)
@@ -54,8 +41,8 @@ class Settings : Fragment() {
                 editor.apply()
                 Toast.makeText(context, resources.getString(R.string.msg_Dark_Off), Toast.LENGTH_SHORT).show()
             }
-        }
-        btnDark.setOnClickListener { swDark.performClick() }
+        }*/
+        btnDark.setOnClickListener { dialog.showDialogBoxDarkMode(context) }
         return v
     }
 }

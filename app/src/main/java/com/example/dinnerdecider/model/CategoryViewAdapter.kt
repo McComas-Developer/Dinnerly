@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
 import com.example.dinnerdecider.R
@@ -17,16 +18,13 @@ class CategoryViewAdapter(private val list: List<CategoryModel>, private val con
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val inflater = LayoutInflater.from(context)
-        Log.d("Michael", "Create View Holder")
         return CategoryViewHolder(
             inflater.inflate(R.layout.view_categories, parent, false)
         )
     }
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-        Log.d("Michael", "Bind View Holder")
         val model = list[position]
-        val category: String = model.title
-        holder.mCategory.text = category
+        holder.mCategory.text = model.title
 
         val expanded: Boolean = model.isExpanded
         if(model.isClicked){

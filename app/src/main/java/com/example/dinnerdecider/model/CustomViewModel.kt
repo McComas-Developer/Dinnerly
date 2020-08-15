@@ -15,15 +15,14 @@ class CustomViewModel: ViewModel() {
     }
 
     fun allFieldsFilled(): Boolean{
-        for(i in 0 until getCustomCount()){
-            if(customList[i].title == "")
+        for(category in customList){
+            if(category.title == "")
                 return false
         }
         return true
     }
 
     fun getCustom(): List<CustomModel> = customList
-    private fun getCustomCount(): Int = customList.count()
     private fun resetCustom(){ customList = list.map { CustomModel(it) } }
 
     // Determine if application is online

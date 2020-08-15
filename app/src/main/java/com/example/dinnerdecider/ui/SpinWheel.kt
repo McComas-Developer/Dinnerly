@@ -1,6 +1,7 @@
 package com.example.dinnerdecider.ui
 
 import android.content.Context
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,33 +10,27 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.adefruandta.spinningwheel.SpinningWheelView
 import com.adefruandta.spinningwheel.SpinningWheelView.OnRotationListener
+import com.airbnb.lottie.LottieAnimationView
 import com.example.dinnerdecider.R
 import com.example.dinnerdecider.util.DialogBox
 import kotlinx.android.synthetic.main.fragment_spin_wheel.view.*
 import java.util.ArrayList
 
 class SpinWheel : Fragment(){
+    private lateinit var dots: LottieAnimationView
     private var list = arrayListOf<String>()
     private lateinit var wheelView: SpinningWheelView
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_spin_wheel, container, false)
         wheelView = v.wheel as SpinningWheelView
-        val dots = v.ani_dot
+        dots = v.ani_dot
 
         // Grab list and shuffle to ensure same category is not repeatedly chosen
         list = arguments?.getStringArrayList("Michael is better than Eli") as ArrayList<String>
         list.shuffle()
         wheelView.items = list
-
-        // If dark mode is on, use dark palette for wheel. Otherwise, use bright palette
-        val sharedPreferences = context?.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
-        val isDarkModeOn = sharedPreferences?.getBoolean("isDarkModeOn", false)
-
-        if (isDarkModeOn!!) {
-            wheelView.colors = resources.getIntArray(R.array.palette_dark)
-            dots.setAnimation("dots_dark.json")
-        } else wheelView.colors = resources.getIntArray(R.array.palette)
+        setWheelColors()
 
         // Set listener for rotation event
         wheelView.onRotationListener = object : OnRotationListener<String> {
@@ -45,11 +40,20 @@ class SpinWheel : Fragment(){
                 wheelView.onRotationListener = null
             }
         }
-
         dots.playAnimation()
         wheelView.isEnabled = false
         wheelView.rotate(50f, 8000, 50)
         return v
+    }
+
+    private fun setWheelColors(){
+        if(resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES){
+            wheelView.colors = resources.getIntArray(R.array.palette_dark)
+            dots.setAnimation("dots_dark.json")
+        } else{
+            wheelView.colors = resources.getIntArray(R.array.palette)
+            dots.setAnimation("dots.json")
+        }
     }
 
     override fun onStop() {

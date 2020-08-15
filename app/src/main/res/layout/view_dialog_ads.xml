@@ -56,10 +56,10 @@
                 android:text="@string/upgrade"
                 android:textColor="@color/btn_txt_color"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/btn_cancel"
+                app:layout_constraintLeft_toRightOf="@+id/btn_Cancel"
                 app:layout_constraintTop_toBottomOf="@+id/txt_dialog"/>
             <Button
-                android:id="@+id/btn_cancel"
+                android:id="@+id/btn_Cancel"
                 android:layout_width="130dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"

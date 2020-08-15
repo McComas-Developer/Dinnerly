@@ -43,7 +43,8 @@ class CustomCategories : Fragment(){
 
         customAmount.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
-                if(customAmount.text.toString() != ""){
+                val text = customAmount.text.toString()
+                if(text != "" && text != "0" && text != "1"){
                     viewModel.setList(Integer.parseInt(customAmount.text.toString()))
                     customAdapter.customList = viewModel.getCustom()
                 }

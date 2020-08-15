@@ -11,11 +11,12 @@
     <string name="title_custom">Custom</string>
     <string name="title_wheel">Spinning</string>
     <string name="title_categories">Categories</string>
-    <string name="detail_custom">Enter number of categories:</string>
+    <string name="detail_custom">Number of categories:</string>
     <string name="test_category">Empty Category!</string>
     <!-- Dialog Box Strings -->
     <string name="okay">Okay</string>
     <string name="cancel">Cancel</string>
+    <string name="update">Update</string>
     <string name="upgrade">Upgrade</string>
     <string name="title_internet">Oops!</string>
     <string name="detail_internet">Something went wrong. Please check your internet connection</string>
@@ -32,10 +33,12 @@
         The app will then select one of the selected categories at random and display places that
         fit near you. \n\n You can view descriptions of the categories by selecting the arrow beside
         the category name.</string>
+    <string name="detail_manual">Manual</string>
+    <string name="detail_automatic">Automatic</string>
     <!-- Toast Messages -->
     <string name="msg_Dark_On">Dark Mode On</string>
     <string name="msg_Dark_Off">Dark Mode Off</string>
-    <string name="msg_custom_error">Please fill out all category boxes</string>
+    <string name="msg_custom_error">All categories must be filled</string>
     <string name="msg_Categories">Please select at least two categories</string>
     <string name="msg_choice_error">An error occurred. Please check your internet connection and try
         again</string>

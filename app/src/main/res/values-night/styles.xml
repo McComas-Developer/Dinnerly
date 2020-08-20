@@ -7,7 +7,7 @@
 
     <!-- Splash Screen Dark Theme -->
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">#585858</item>
+        <item name="android:background">@drawable/splash_dark</item>
     </style>
 
 </resources>

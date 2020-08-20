@@ -13,12 +13,15 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import com.example.dinnerdecider.R
+import com.google.android.gms.ads.AdRequest
+import kotlinx.android.synthetic.main.fragment_start.view.*
 import kotlinx.android.synthetic.main.view_dialog.view.*
 import kotlinx.android.synthetic.main.view_dialog_ads.view.*
 import kotlinx.android.synthetic.main.view_dialog_ads.view.txt_dialog
 import kotlinx.android.synthetic.main.view_dialog_ads.view.txt_dialog_title
 import kotlinx.android.synthetic.main.view_dialog_darkmode.view.*
 import kotlinx.android.synthetic.main.view_dialog_decision.view.*
+import kotlinx.android.synthetic.main.view_dialog_decision.view.adView
 
 class DialogBox {
     // Basic Template Dialog Box
@@ -87,12 +90,11 @@ class DialogBox {
         }
         update.setOnClickListener {
             box.dismiss()
-            if(auto.isChecked)
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-            else if(manual.isChecked)
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            else
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            when{
+                auto.isChecked -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                manual.isChecked -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                else -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
             editor.apply()
         }
         cancel.setOnClickListener { box.dismiss() }
@@ -107,6 +109,9 @@ class DialogBox {
         val again = v.btn_again
         val web = v.web_search
         val choice = v.txt_decision
+        val mAdView = v.adView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
         choice.text = "$key it is!"
         try {
             web.settings.javaScriptEnabled = true;
@@ -114,7 +119,6 @@ class DialogBox {
         } catch (e: Exception) {
             Toast.makeText(from, mFrom.resources.getString(R.string.msg_choice_error), Toast.LENGTH_SHORT).show()
         }
-
         val box: AlertDialog = build.create()
         box.setCancelable(false)
         box.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))

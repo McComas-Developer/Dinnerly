@@ -1,6 +1,5 @@
 package com.example.dinnerdecider.ui
 
-import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
@@ -13,7 +12,9 @@ import com.adefruandta.spinningwheel.SpinningWheelView.OnRotationListener
 import com.airbnb.lottie.LottieAnimationView
 import com.example.dinnerdecider.R
 import com.example.dinnerdecider.util.DialogBox
+import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.fragment_spin_wheel.view.*
+import kotlinx.android.synthetic.main.fragment_spin_wheel.view.adView
 import java.util.ArrayList
 
 class SpinWheel : Fragment(){
@@ -23,6 +24,9 @@ class SpinWheel : Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_spin_wheel, container, false)
+        val mAdView = v.adView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
         wheelView = v.wheel as SpinningWheelView
         dots = v.ani_dot
 

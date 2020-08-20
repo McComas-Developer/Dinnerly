@@ -3,7 +3,8 @@ package com.example.dinnerdecider.db
 
 interface RepositoryOutline {
     suspend fun setDatabaseCategories()
-    fun setListOfCategories(list: Array<String>, list2: Array<String>)
+    fun setListOfCategories(catEng: Array<String>, desEng: Array<String>, catSpa: Array<String>, desSpa: Array<String>)
     suspend fun getCategoryList(language: String): List<Categories>
     fun getCategories(): ArrayList<String>
+    fun getDescriptions(): ArrayList<String>
 }

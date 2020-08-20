@@ -13,6 +13,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.NavHostFragment
 import com.example.dinnerdecider.R
+import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.fragment_start.view.*
 
 class StartFragment : Fragment(){
@@ -24,6 +25,10 @@ class StartFragment : Fragment(){
         val btnCustom: Button = v.btn_byCustom
         imgAppIcon = v.img_app_icon
         val btnSettings: ImageButton = v.btn_settings
+
+        val mAdView = v.adView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
 
         // Set image icon based on dark/light mode
         val sharedPreferences = requireContext().getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)

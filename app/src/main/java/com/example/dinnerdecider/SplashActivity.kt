@@ -2,8 +2,6 @@ package com.example.dinnerdecider
 
 import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
-import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -22,15 +20,12 @@ class SplashActivity : AppCompatActivity() {
         startActivity(Intent(this@SplashActivity, MainActivity::class.java))
         finish()
     }
-
+    // Set dark mode based on user preference
     private fun setDarkMode(manual: Boolean, automatic: Boolean){
-        if(automatic) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        if(automatic)
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-            return
-        }
-        if (manual)
+        else if (manual)
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        else
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 }

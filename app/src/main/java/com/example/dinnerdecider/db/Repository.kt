@@ -3,7 +3,7 @@ package com.example.dinnerdecider.db
 import android.util.Log
 
 class Repository(private val db: AppDatabase): RepositoryOutline {
-    var categoryInfo: List<Categories> = listOf()
+    private var categoryInfo: List<Categories> = listOf()
     private val categoryDao = db.categoryDao()
 
     // Set Categories in Database
@@ -19,7 +19,7 @@ class Repository(private val db: AppDatabase): RepositoryOutline {
         return categoryInfo
     }
 
-    // Grab Category names only from Database
+    // Grab category names from Database
     override fun getCategories(): ArrayList<String> {
         val temp: ArrayList<String> = arrayListOf()
         for(i in categoryInfo.indices)
@@ -27,10 +27,18 @@ class Repository(private val db: AppDatabase): RepositoryOutline {
         return temp
     }
 
-    // Prepare list of strings for database input
-    override fun setListOfCategories(list: Array<String>, list2: Array<String>) {
-        categoryInfo = list.map { Categories(it, null, "English") } +
-                list2.map { Categories(it, null, "español") }
+    // Grab descriptions from Database
+    override fun getDescriptions(): ArrayList<String> {
+        val temp: ArrayList<String> = arrayListOf()
+        for(i in categoryInfo.indices)
+            temp.add(categoryInfo[i].description)
+        return temp
     }
 
+    // Prepare list of strings for database input
+    override fun setListOfCategories(catEng: Array<String>, desEng: Array<String>, catSpa: Array<String>, desSpa: Array<String>) {
+        val listEng = catEng.zip(desEng).map { Categories(it.first, it.second, "English") }
+        val listSpa = catSpa.zip(desSpa).map { Categories(it.first, it.second, "español") }
+        categoryInfo = listEng + listSpa
+    }
 }

@@ -25,15 +25,16 @@ class CategoryViewModel: ViewModel() {
         repository = Repository(db)
     }
 
-    fun setCategoryList(list: Array<String>, list2: Array<String>){
+    fun setCategoryList(catEng: Array<String>, desEng: Array<String>, catSpa: Array<String>, desSpa: Array<String>){
         CoroutineScope(Dispatchers.IO).launch{
             if(repository.getCategoryList(determineLanguage()).isEmpty()) {
                 Log.d("Michael", "Category list is empty")
-                repository.setListOfCategories(list, list2)
+                repository.setListOfCategories(catEng, desEng, catSpa, desSpa)
                 withContext(Dispatchers.Default) { repository.setDatabaseCategories() }
             }
             repository.getCategoryList(determineLanguage())
-            val temp = repository.getCategories().map { CategoryModel(it) }
+            val temp = repository.getCategories().zip(repository.getDescriptions()).map {
+                CategoryModel(it.first, it.second) }
             categoryList.postValue(temp)
         }
     }

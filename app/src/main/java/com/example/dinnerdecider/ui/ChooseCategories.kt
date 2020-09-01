@@ -9,7 +9,6 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
@@ -20,9 +19,10 @@ import com.example.dinnerdecider.model.CategoryModel
 import com.example.dinnerdecider.model.CategoryViewAdapter
 import com.example.dinnerdecider.model.CategoryViewModel
 import com.example.dinnerdecider.R
+import com.example.dinnerdecider.db.Categories
 import com.example.dinnerdecider.util.DialogBox
 import kotlinx.android.synthetic.main.fragment_choose_categories.view.*
-import java.util.*
+import kotlin.collections.ArrayList
 
 class ChooseCategories : Fragment() {
     private lateinit var categoryList: List<CategoryModel>
@@ -36,12 +36,16 @@ class ChooseCategories : Fragment() {
         val viewModel: CategoryViewModel = ViewModelProvider(this)
             .get(CategoryViewModel::class.java)
 
+        val catEng = resources.getStringArray(R.array.categories_english)
+        val desEng = resources.getStringArray(R.array.descriptions_english)
+        val catSpa = resources.getStringArray(R.array.categories_spanish)
+        val desSpa = resources.getStringArray(R.array.descriptions_spanish)
+
         // Set database
         viewModel.setInfo(requireContext())
         (categoryView.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
         // Send Arrays to database for input if needed
-        viewModel.setCategoryList(resources.getStringArray(R.array.categories_english),
-            resources.getStringArray(R.array.categories_spanish))
+        viewModel.setCategoryList(catEng, desEng, catSpa, desSpa)
         // Observe changes to database category list
         viewModel.getCategories().observe(viewLifecycleOwner, Observer {
             categoryList = it

@@ -46,15 +46,6 @@
             app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
-        android:id="@+id/showDecision"
-        android:name="com.example.dinnerdecider.ui.ShowDecision"
-        android:label="fragment_show_decision"
-        tools:layout="@layout/fragment_show_decision">
-        <action
-            android:id="@+id/action_showDecision_to_startFragment"
-            app:destination="@id/startFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/settings"
         android:name="com.example.dinnerdecider.ui.Settings"
         android:label="fragment_settings"

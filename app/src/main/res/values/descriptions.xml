@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="descriptions_english">
-        <item>Barbecue</item>
-        <item>Breakfast</item>
-        <item>Buffet</item>
-        <item>Chinese</item>
-        <item>Cuban</item>
-        <item>Deli</item>
-        <item>Places such as McDonalds, Burger King, and Taco Bell are in this category</item>
-        <item>Indian</item>
-        <item>Italian</item>
-        <item>Japanese</item>
-        <item>Mexican</item>
-        <item>Seafood</item>
-        <item>Southern</item>
-        <item>Steakhouse</item>
-        <item>Sushi</item>
-        <item>Thai</item>
-        <item>Vegetarian</item>
+        <item>Characteristics of a barbecue restaurant include: country atmosphere, a selection of different
+            smoked meats typically served with cole slaw or hush puppies, and moderately priced</item>
+        <item>Characteristics of a breakfast restaurant include: light atmosphere, moderate to highly priced
+            selection of food, food such as: french toast, eggs, bacon, and pancakes. </item>
+        <item>Characteristics of a buffet restaurant include: A selection of food at a fixed price, food on
+            buffet bars from which guests serve themselves, Modest to extensive selection
+            (might include salad, soup, appetizers, hot entrees, dessert, and fruit)</item>
+        <item>Characteristics of a chinese restaurant include: strong aroma filled atmosphere,
+            moderately to high priced food selections, food selections consist of sweet, sour,
+            salty, bitter, hot</item>
+        <item>Characteristics of a cuban restaurant include: </item>
+        <item>Characteristics of a deli restaurant include: </item>
+        <item>Characteristics of fast food places include: Focus is primarily on quick service,
+            counter service or drive-thru, usually a chain and serves standardized meals made of
+            processed food, and Casual ambiance</item>
+        <item>Characteristics of a indian restaurant include:</item>
+        <item>Characteristics of a italian restaurant include:</item>
+        <item>Characteristics of a japanese restaurant include:</item>
+        <item>Characteristics of a mexican restaurant include:</item>
+        <item>Characteristics of a seafood restaurant include:</item>
+        <item>Characteristics of a southern restaurant include:</item>
+        <item>Characteristics of a steakhouse restaurant include:</item>
+        <item>Characteristics of a sushi restaurant include:</item>
+        <item>Characteristics of a thai restaurant include:</item>
+        <item>Characteristics of a vegetarian restaurant include:</item>
     </string-array>
 
     <string-array name="descriptions_spanish">

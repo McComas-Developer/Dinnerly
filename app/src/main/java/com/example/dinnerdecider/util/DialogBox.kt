@@ -51,7 +51,7 @@ class DialogBox {
         val box: AlertDialog = build.create()
         box.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         close.setOnClickListener { box.dismiss() }
-        upgrade.setOnClickListener { /*TODO: When clicked, open link to upgrade app*/  }
+        upgrade.setOnClickListener {Toast.makeText(mFrom, "Coming Soon", Toast.LENGTH_SHORT).show()}
         box.show()
     }
     // Dark Mode Dialog Box

@@ -15,7 +15,6 @@
         <item>Seafood</item>
         <item>Southern</item>
         <item>Steakhouse</item>
-        <item>Sushi</item>
         <item>Thai</item>
         <item>Vegetarian</item>
     </string-array>
@@ -35,7 +34,6 @@
         <item>Mariscos</item>
         <item>Del Sur</item>
         <item>Asador</item>
-        <item>Sushi</item>
         <item>Tailandés</item>
         <item>Vegetariano</item>
     </string-array>

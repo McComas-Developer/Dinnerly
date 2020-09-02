@@ -11,40 +11,114 @@
         <item>Characteristics of a chinese restaurant include: strong aroma filled atmosphere,
             moderately to high priced food selections, food selections consist of sweet, sour,
             salty, bitter, hot</item>
+        <!-- Needs Description -->
         <item>Characteristics of a cuban restaurant include: </item>
-        <item>Characteristics of a deli restaurant include: </item>
+        <item>Characteristics of a deli restaurant include: They often serve breakfast, lunch and
+            dinner. A good deli will offer a larger and fresher array of menu items than most
+            restaurants. They sell premium, high-quality cold cuts (pastrami, corned beef, salami),
+            pungent cheeses by weight and prepare sandwiches to order</item>
         <item>Characteristics of fast food places include: Focus is primarily on quick service,
             counter service or drive-thru, usually a chain and serves standardized meals made of
-            processed food, and Casual ambiance</item>
-        <item>Characteristics of a indian restaurant include:</item>
-        <item>Characteristics of a italian restaurant include:</item>
-        <item>Characteristics of a japanese restaurant include:</item>
-        <item>Characteristics of a mexican restaurant include:</item>
-        <item>Characteristics of a seafood restaurant include:</item>
-        <item>Characteristics of a southern restaurant include:</item>
-        <item>Characteristics of a steakhouse restaurant include:</item>
-        <item>Characteristics of a sushi restaurant include:</item>
-        <item>Characteristics of a thai restaurant include:</item>
-        <item>Characteristics of a vegetarian restaurant include:</item>
+            processed food, and Casual ambiance. Price of food selection is very low</item>
+        <item>Characteristics of a indian restaurant include: Indian restaurants are experts with
+            creating dishes full of a variety of spices that are flavorful. Restaurants in this
+            category prize themselves on hospitality and their food selection is highly affordable</item>
+        <item>Characteristics of a italian restaurant include: generally characterized by its
+            simplicity, Italian cooks rely chiefly on the quality of the ingredients rather than on
+            elaborate preparation. Pasta, Pizza, pisoto, osbubucco, Florentine steak, and
+            incredible desserts, such as tiramisu, profiteroles or pudding can be found. Moderate to
+            highly priced selection of food</item>
+        <item>Characteristics of a japanese restaurant include: a presentation of food that appeals
+            to the 5 senses. The food is intently prepared to be easy on the eyes and taste buds and
+            often changes with the seasons. Food selection can include sushi, rice bowls, fish, and
+            vegetables. Soy sauce is often used to add additional flavor to the dish. Moderate to
+            highly priced food</item>
+        <item>Characteristics of a mexican restaurant include: an energetic and friendly atmosphere.
+            General food selection includes tacos, burritos, quesodillas, beans and rice, salsa, and
+            occasional seafood options. Price can range from low to high cost.</item>
+        <item>Characteristics of a seafood restaurant include: a marine-themed decor, with
+            decorations such as fish nets, nautical images and buoys. Food selection ranges from
+            different species of fish and can include non seafood itms such as chicken or beef.
+            Price of seafood can range from moderate to very high.</item>
+        <item>Characteristics of a southern restaurant include: a U.S. country decor such as a
+            barn or farm. Typically friendly and homey atmosphere. Food selection can include
+            barbecue, fried chicken, cornbread, burgers, coleslaw and a variety of other items. Food
+            is normally moderately priced</item>
+        <item>Characteristics of a steakhouse restaurant include: casual to fine dining experiences.
+            Food selection deals primarily in different cuts of meat grilled and served. Price of
+            these items is typically highly priced depending on the type and cut of met purchased</item>
+        <item>Characteristics of a thai restaurant include: several distinct tastes. Such as sweet,
+            sour, bitter, salty, and spicy. These taste are combined with a variety of spices to
+            bring you a dish that appeals to the nose and stomach. Food selection can include
+            seafood, rice, soups, and curry. Price of food is typically moderately priced</item>
+        <item>Characteristics of a vegetarian restaurant include: no meat, poultry, game, fish,
+            shellfish or by-products of slaughter. Can include dairy products and eggs to the
+            customer if desired. Price for food is fairly priced.</item>
     </string-array>
 
     <string-array name="descriptions_spanish">
-        <item>Barbecue</item>
-        <item>Breakfast</item>
-        <item>Buffet</item>
-        <item>Chinese</item>
-        <item>Cuban</item>
-        <item>Deli</item>
-        <item>Fast Food</item>
-        <item>Indian</item>
-        <item>Italian</item>
-        <item>Japanese</item>
-        <item>Mexican</item>
-        <item>Seafood</item>
-        <item>Southern</item>
-        <item>Steakhouse</item>
-        <item>Sushi</item>
-        <item>Thai</item>
-        <item>Vegetarian</item>
+        <item>Las características de un restaurante de barbacoa incluyen: ambiente campestre, una
+            selección de diferentes carnes ahumadas que normalmente se sirven con ensalada de
+            repollo o cachorros hush, y precios moderados</item>
+        <item>Las características de un restaurante de desayuno incluyen: ambiente ligero, precio
+            moderado a alto selección de alimentos, alimentos como: tostadas francesas, huevos,
+            tocino y panqueques.</item>
+        <item>Las características de un restaurante buffet incluyen: una selección de comida a un
+            precio fijo, comida en barras de buffet en las que los huéspedes se sirven ellos mismos,
+            desde modesta hasta extensa selección (puede incluir ensalada, sopa, aperitivos, platos
+            calientes, postre y fruta)</item>
+        <item>Las características de un restaurante chino incluyen: ambiente lleno de aroma fuerte,
+             selecciones de alimentos de precio moderado a alto, las selecciones de alimentos
+            consisten en dulces, agrios, salado, amargo, caliente</item>
+        <item>Las características de un restaurante cubano incluyen:</item>
+        <item>Las características de un restaurante de delicatessen incluyen: Suelen servir
+            desayunos, almuerzos y cena. Una buena tienda de delicatessen ofrecerá una variedad más
+            grande y fresca de elementos de menú que la mayoría restaurantes. Venden embutidos de
+            primera calidad (pastrami, carne en conserva, salami), quesos picantes por peso y
+            preparar sándwiches a pedido</item>
+        <item>Las características de los lugares de comida rápida incluyen: El enfoque está
+            principalmente en el servicio rápido, servicio de mostrador o drive-thru, generalmente
+            una cadena y sirve comidas estandarizadas hechas de comida procesada y ambiente informal.
+            El precio de la selección de alimentos es muy bajo.</item>
+        <item>Las características de un restaurante indio incluyen: Los restaurantes indios son
+            expertos en creando platos llenos de una variedad de especias que son sabrosas.
+            Restaurantes en este se premian en la categoría de hostelería y su selección de
+            alimentos es muy asequible</item>
+        <item>Las características de un restaurante italiano incluyen: generalmente caracterizado
+            por su simplicidad, los cocineros italianos confían principalmente en la calidad de los
+            ingredientes más que en elaborada preparación. Pasta, pizza, pisoto, osbubucco, bistec
+            florentino y Se pueden encontrar postres increíbles, como tiramisú, profiteroles o
+            budines. Moderado a selección de comida muy cara</item>
+        <item>Las características de un restaurante japonés incluyen: una presentación de comida que
+            atrae a los 5 sentidos. La comida está cuidadosamente preparada para ser agradable a la
+            vista y al paladar ya menudo cambia con las estaciones. La selección de alimentos puede
+            incluir sushi, tazones de arroz, pescado y vegetales. La salsa de soja se usa a menudo
+            para agregar sabor adicional al plato. Moderado a comida muy cara</item>
+        <item>Las características de un restaurante mexicano incluyen: un ambiente enérgico y
+            agradable. La selección de comida general incluye tacos, burritos, quesodillas, frijoles
+            y arroz, salsa y opciones ocasionales de mariscos. El precio puede variar de bajo a alto
+            costo.</item>
+        <item>Las características de un restaurante de mariscos incluyen: una decoración de temática
+            marina, con decoraciones como redes de pesca, imágenes náuticas y boyas. La selección de
+            alimentos varía desde diferentes especies de pescado y puede incluir productos que no
+            sean mariscos, como pollo o ternera. El precio de los mariscos puede variar de moderado
+            a muy alto.</item>
+        <item>Las características de un restaurante sureño incluyen: una decoración campestre de EE.
+            UU., Como un granero o una granja. Ambiente típicamente acogedor y hogareño. La
+            selección de alimentos puede incluir barbacoa, pollo frito, pan de maíz, hamburguesas,
+            ensalada de col y una variedad de otros artículos. La comida normalmente tiene un precio
+            moderado</item>
+        <item>Las características de un restaurante de carnes incluyen: experiencias gastronómicas
+            informales a elegantes. La selección de alimentos se ocupa principalmente de diferentes
+            cortes de carne a la parrilla y servidos. Precio de Estos artículos suelen tener un
+            precio elevado según el tipo y el corte de met comprado</item>
+        <item>Las características de un restaurante tailandés incluyen: varios gustos distintos.
+            Como dulce agrio, amargo, salado y picante. Estos sabores se combinan con una variedad
+            de especias para traerte un plato que agrada la nariz y el estómago. La selección de
+            alimentos puede incluir mariscos, arroces, sopas y curry. El precio de la comida suele
+            ser moderado</item>
+        <item>Las características de un restaurante vegetariano incluyen: sin carne, aves, caza,
+            pescado, mariscos o subproductos del sacrificio. Puede incluir productos lácteos y
+            huevos al cliente si lo desea. El precio de la comida es razonable.</item>
     </string-array>
 </resources>

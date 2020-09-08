@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dinnerdecider">
+    package="com.michael.dinnerly">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -15,7 +15,7 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-9060745523188945~7262606910"/>
         <activity
-            android:name=".SplashActivity"
+            android:name="com.michael.dinnerly.SplashActivity"
             android:theme="@style/SplashTheme"
             android:screenOrientation="portrait">
             <intent-filter>

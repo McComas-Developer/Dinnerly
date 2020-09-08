@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dinner Decided</string>
+    <string name="app_name">Dinnerly</string>
     <!-- Button Strings -->
     <string name="btn_begin">Start</string>
     <string name="btn_custom">Custom</string>
@@ -22,12 +22,12 @@
     <string name="detail_internet">Something went wrong. Please check your internet connection</string>
     <string name="detail_ads">Ads help support us to create more to help you! If you wish to
     remove ads you can upgrade to the ad free version.</string>
-    <string name="detail_info">Creator: Michael McComas. \n\n Dinner Decided is the app to solve all
+    <string name="detail_info">Creator: Michael McComas. \n\n Dinnerly is the app to solve all
         your indecisive dinner decision needs! You can select options to choose between in our
         category list and the app will decide which place to go and display places that fit near
         you.</string>
-    <string name="detail_feedback">If you have any questions or concerns please contact us at: \n\n
-        fakeEmail@fake.com</string>
+    <string name="detail_feedback">If you have any questions or concerns please do not hesitate to
+        leave a review on the Google Play store. We will get back to you as soon as possible!</string>
     <string name="detail_categories">The categories listed below are some of the most common types
         of restaurants. \n\nSelect a minimum of two categories and click the randomize button.
         The app will then select one of the selected categories at random and display places that

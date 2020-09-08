@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dinner Decided</string>
+    <string name="app_name">Dinnerly</string>
     <!-- Button Strings -->
     <string name="btn_begin">Comienzo</string>
     <string name="btn_random">Aleatorizar</string>
@@ -22,12 +22,12 @@
     <string name="detail_internet">Algo salió mal. Por favor revise su conexion a internet</string>
     <string name="detail_ads">¡Los anuncios nos ayudan a crear más para ayudarte! Si quieres
      eliminar anuncios que puede actualizar a la versión sin anuncios.</string>
-    <string name="detail_info">Creador: Michael McComas. \n\n ¡Dinner Decided es la aplicación
+    <string name="detail_info">Creador: Michael McComas. \n\n ¡Dinnerly es la aplicación
         para resolver todas tus necesidades indecisas de tomar una cena! Puede seleccionar opciones
         para elegir en nuestra lista de categorías y la aplicación decidirá a qué lugar ir y
         mostrará los lugares que se ajusten a usted. </string>
-    <string name="detail_feedback">Si tiene alguna pregunta o inquietud, contáctenos en: \n\n
-        fakeEmail@fake.com</string>
+    <string name="detail_feedback">Si tiene alguna pregunta o inquietud, no dude en
+        dejar una reseña en la tienda Google Play. ¡Nos comunicaremos contigo lo antes posible!</string>
     <string name="detail_categories">Las categorías enumeradas a continuación son algunos de los
         tipos más comunes de restaurantes.\n\n Seleccione un mínimo de dos categorías y haga clic
         en el botón de aleatorización. La aplicación luego seleccionará una de las categorías

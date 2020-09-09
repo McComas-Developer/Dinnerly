@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/startFragment"
-        android:name="com.example.dinnerdecider.ui.StartFragment"
+        android:name="com.michael.dinnerly.ui.StartFragment"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/chooseCategories"
-        android:name="com.example.dinnerdecider.ui.ChooseCategories"
+        android:name="com.michael.dinnerly.ui.ChooseCategories"
         android:label="fragment_choose_categories"
         tools:layout="@layout/fragment_choose_categories" >
         <action
@@ -47,12 +47,12 @@
     </fragment>
     <fragment
         android:id="@+id/settings"
-        android:name="com.example.dinnerdecider.ui.Settings"
+        android:name="com.michael.dinnerly.ui.Settings"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/customCategories"
-        android:name="com.example.dinnerdecider.ui.CustomCategories"
+        android:name="com.michael.dinnerly.ui.CustomCategories"
         android:label="fragment_custom_categories"
         tools:layout="@layout/fragment_custom_categories" >
         <action
@@ -65,7 +65,7 @@
     </fragment>
     <fragment
         android:id="@+id/spinWheel"
-        android:name="com.example.dinnerdecider.ui.SpinWheel"
+        android:name="com.michael.dinnerly.ui.SpinWheel"
         android:label="fragment_spin_wheel"
         tools:layout="@layout/fragment_spin_wheel" >
         <action

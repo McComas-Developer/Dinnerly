@@ -14,10 +14,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dinnerdecider.R
-import com.example.dinnerdecider.model.CustomViewAdapter
-import com.example.dinnerdecider.model.CustomViewModel
-import com.example.dinnerdecider.util.DialogBox
+import com.michael.dinnerly.R
+import com.michael.dinnerly.model.CustomViewAdapter
+import com.michael.dinnerly.model.CustomViewModel
+import com.michael.dinnerly.util.DialogBox
 import kotlinx.android.synthetic.main.fragment_custom_categories.view.*
 import java.util.ArrayList
 

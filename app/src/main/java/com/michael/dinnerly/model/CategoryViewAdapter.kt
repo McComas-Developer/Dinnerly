@@ -8,10 +8,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
-import com.example.dinnerdecider.R
+import com.michael.dinnerly.R
 import kotlinx.android.synthetic.main.view_categories.view.*
 
-//TODO: Resolve error when clicking item in view (other items clicked but not clicked in model)
 class CategoryViewAdapter(private val list: List<CategoryModel>, private val context: Context) :
     RecyclerView.Adapter<CategoryViewAdapter.CategoryViewHolder>() {
 
@@ -69,7 +68,3 @@ class CategoryViewAdapter(private val list: List<CategoryModel>, private val con
         }
     }
 }
-
-/*fun LottieAnimationView.isAnimating(): Boolean {
-    return this.progress > 0f && this.progress < 1f
-}*/

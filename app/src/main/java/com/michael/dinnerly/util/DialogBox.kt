@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
-import com.example.dinnerdecider.R
+import com.michael.dinnerly.R
 import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.view_dialog.view.*
 import kotlinx.android.synthetic.main.view_dialog_ads.view.*

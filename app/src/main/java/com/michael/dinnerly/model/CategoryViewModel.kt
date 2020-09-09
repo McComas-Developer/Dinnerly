@@ -4,9 +4,9 @@ import android.content.Context
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.dinnerdecider.db.AppDatabase
-import com.example.dinnerdecider.db.Repository
-import com.example.dinnerdecider.util.Connectivity
+import com.michael.dinnerly.db.AppDatabase
+import com.michael.dinnerly.db.Repository
+import com.michael.dinnerly.util.Connectivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -14,7 +14,6 @@ import kotlinx.coroutines.withContext
 import java.util.*
 
 class CategoryViewModel: ViewModel() {
-    //TODO: Find way to store category descriptions alongside their designated categories
     private lateinit var db: AppDatabase
     private lateinit var repository: Repository
     private var categoryList = MutableLiveData<List<CategoryModel>>()

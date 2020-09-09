@@ -15,12 +15,12 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
-import com.example.dinnerdecider.model.CategoryModel
-import com.example.dinnerdecider.model.CategoryViewAdapter
-import com.example.dinnerdecider.model.CategoryViewModel
-import com.example.dinnerdecider.R
-import com.example.dinnerdecider.db.Categories
-import com.example.dinnerdecider.util.DialogBox
+import com.michael.dinnerly.model.CategoryModel
+import com.michael.dinnerly.model.CategoryViewAdapter
+import com.michael.dinnerly.model.CategoryViewModel
+import com.michael.dinnerly.R
+import com.michael.dinnerly.db.Categories
+import com.michael.dinnerly.util.DialogBox
 import kotlinx.android.synthetic.main.fragment_choose_categories.view.*
 import kotlin.collections.ArrayList
 

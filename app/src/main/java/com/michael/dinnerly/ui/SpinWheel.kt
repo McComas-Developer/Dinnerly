@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import com.adefruandta.spinningwheel.SpinningWheelView
 import com.adefruandta.spinningwheel.SpinningWheelView.OnRotationListener
 import com.airbnb.lottie.LottieAnimationView
-import com.example.dinnerdecider.R
-import com.example.dinnerdecider.util.DialogBox
+import com.michael.dinnerly.R
+import com.michael.dinnerly.util.DialogBox
 import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.fragment_spin_wheel.view.*
 import kotlinx.android.synthetic.main.fragment_spin_wheel.view.adView

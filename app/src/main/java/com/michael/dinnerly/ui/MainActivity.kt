@@ -2,7 +2,7 @@ package com.michael.dinnerly.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.dinnerdecider.R
+import com.michael.dinnerly.R
 import com.google.android.gms.ads.MobileAds
 
 

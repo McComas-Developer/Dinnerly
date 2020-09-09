@@ -1,7 +1,7 @@
 package com.michael.dinnerly.model
 
 import androidx.lifecycle.ViewModel
-import com.example.dinnerdecider.util.Connectivity
+import com.michael.dinnerly.util.Connectivity
 
 class CustomViewModel: ViewModel() {
     private var list = arrayListOf("")

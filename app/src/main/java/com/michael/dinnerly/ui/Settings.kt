@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.example.dinnerdecider.util.DialogBox
-import com.example.dinnerdecider.R
+import com.michael.dinnerly.util.DialogBox
+import com.michael.dinnerly.R
 import kotlinx.android.synthetic.main.fragment_settings.view.*
 
 

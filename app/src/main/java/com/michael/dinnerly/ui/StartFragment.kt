@@ -11,7 +11,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.navigation.fragment.NavHostFragment
-import com.example.dinnerdecider.R
+import com.michael.dinnerly.R
 import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.fragment_start.view.*
 

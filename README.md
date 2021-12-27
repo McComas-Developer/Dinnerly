@@ -20,3 +20,5 @@ Please leave a review on the Google Play store and we'll get back as soon as we 
 
 # App
 https://play.google.com/store/apps/details?id=com.michael.dinnerly
+
+``` Copyright (c) 2021, Michael McComas ```
